@@ -85,8 +85,16 @@
                         Symbol="Copy20" />
                 </Button>
             </StackPanel>
-            <Button Click="Delete_Click" Style="{ThemeResource ExperimentalToolbarButton}" HorizontalAlignment="Right" Width="44" Height="32">
+            <Button Style="{ThemeResource ExperimentalToolbarButton}" HorizontalAlignment="Right" Width="44" Height="32">
                 <icons:FluentSymbolIcon Symbol="Delete20" Margin="0, 0, 1, 0"/>
+                <Button.Flyout>
+                    <Flyout>
+                        <StackPanel>
+                            <TextBlock Style="{ThemeResource BaseTextBlockStyle}" Text="This account will be deleted. Do you want to continue?" Margin="0,0,0,12" />
+                            <Button Click="Delete_Click" Content="Yes, delete this account" />
+                        </StackPanel>
+                    </Flyout>
+                </Button.Flyout>
             </Button>
         </Grid>
     </StackPanel>
