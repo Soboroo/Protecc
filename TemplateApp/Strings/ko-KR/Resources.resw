@@ -165,6 +165,9 @@
     <value>새로운 계정</value>
     <comment>The title of AddAccountPage.xaml</comment>
   </data>
+  <data name="EditAccountPageTitle.Text" xml:space="preserve">
+    <value>Add Account - Protecc</value>
+  </data>
   <data name="EditAccountTitle.Text" xml:space="preserve">
     <value>계정 편집</value>
   </data>
