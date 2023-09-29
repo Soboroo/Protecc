@@ -118,54 +118,54 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AccountGeneralColorTitle.Text" xml:space="preserve">
-    <value>Color:</value>
+    <value>색상:</value>
   </data>
   <data name="AccountGeneralNamePlaceholder.Text" xml:space="preserve">
-    <value>Enter A name...</value>
+    <value>이름을 입력하세요...</value>
     <comment>The placeholder of name input box</comment>
   </data>
   <data name="AccountGeneralNameTitle.Text" xml:space="preserve">
-    <value>Name:</value>
+    <value>이름:</value>
     <comment>The name of account</comment>
   </data>
   <data name="AccountGeneralNext.Text" xml:space="preserve">
-    <value>Next</value>
+    <value>다음</value>
   </data>
   <data name="AddAccount30Seconds.Content" xml:space="preserve">
-    <value>30 seconds</value>
+    <value>30초</value>
   </data>
   <data name="AddAccount60Seconds.Content" xml:space="preserve">
-    <value>60 seconds</value>
+    <value>60초</value>
   </data>
   <data name="AddAccount6Digits.Content" xml:space="preserve">
-    <value>6 digits</value>
+    <value>6자리</value>
   </data>
   <data name="AddAccount8Digits.Content" xml:space="preserve">
-    <value>8 digits</value>
+    <value>8자리</value>
   </data>
   <data name="AddAccountAdvanced.Text" xml:space="preserve">
-    <value>Advanced</value>
+    <value>고급설정</value>
   </data>
   <data name="AddAccountDigitsTitle.Text" xml:space="preserve">
-    <value>Digits:</value>
+    <value>자릿수:</value>
   </data>
   <data name="AddAccountHashModeTitle.Text" xml:space="preserve">
-    <value>Hash Mode:</value>
+    <value>해싱 알고리즘:</value>
   </data>
   <data name="AddAccountKeyTitle.Text" xml:space="preserve">
-    <value>Key:</value>
+    <value>키:</value>
   </data>
   <data name="AddAccountPageTitle.Text" xml:space="preserve">
-    <value>Add Account - Protecc</value>
+    <value>새로운 계정 - Protecc</value>
   </data>
   <data name="AddAccountTimeTitle.Text" xml:space="preserve">
-    <value>Time:</value>
+    <value>시간:</value>
   </data>
   <data name="AddAccountTitle.Text" xml:space="preserve">
-    <value>New Account</value>
+    <value>새로운 계정</value>
     <comment>The title of AddAccountPage.xaml</comment>
   </data>
   <data name="EditAccountTitle.Text" xml:space="preserve">
-    <value>Edit Account</value>
+    <value>계정 편집</value>
   </data>
 </root>
