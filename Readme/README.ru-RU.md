@@ -5,7 +5,7 @@
 <div align="center">
 <h1>Protecc</h1>
 
-<a href="https://github.com/FireCubeStudios/Protecc"><img src="https://img.shields.io/badge/Contributions-welcome-green"></a> 
+<a href="https://github.com/FireCubeStudios/Protecc"><img src="https://img.shields.io/badge/Contributions-welcome-green"></a>
 
 <a href="https://github.com/FireCubeStudios/Protecc/issues"><img src="https://img.shields.io/github/issues/FireCubeStudios/Protecc"></a>
 <a href="https://github.com/FireCubeStudios/Protecc/fork"><img src="https://img.shields.io/github/forks/FireCubeStudios/Protecc"></a>
@@ -13,34 +13,42 @@
 
 [English](https://github.com/FireCubeStudios/Protecc/blob/master/README.md) | [Simplified Chinese(简体中文)](https://github.com/FireCubeStudios/Protecc/blob/master/README.zh-CN.md) | **Русский** | [Deutsch](https://github.com/BootVirtual/Protecc/blob/master/Readme/Readme_German.md) | [Español](https://github.com/BootVirtual/Protecc/blob/master/Readme/README_Spanish.md) | [हिन्दी](https://github.com/BootVirtual/Protecc/blob/master/Readme/readme_hindi.md) | [ਪੰਜਾਬੀ](https://github.com/FireCubeStudios/Protecc/blob/master/Readme/readme_Punjabi.md)
 
-<p style="font-size:15px;">Protecc - это современный клиент двухфакторной аутентификации (2FA) для Windows с открытым исходным кодом. Клиент поддерживает алгоритм TOTP и имеет широкий набор функций по кастомизации и конфиденциальности, таких, как поддержка Windows Hello, фильтр конфиденциальности и экспорт.</p></div>
+<p style="font-size:15px;">Protecc - это современный клиент двухфакторной аутентификации (2FA) для Windows с открытым исходным кодом. Клиент поддерживает алгоритм TOTP и имеет широкий набор функций по кастомизации и конфиденциальности, таких, как поддержка Windows Hello, фильтр конфиденциальности и экспорт.</p>
+</div>
 
-# Предпросмотр ✨ 
+# Предпросмотр ✨
+
 <p align="center">
   <img align="center" src="https://store-images.s-microsoft.com/image/apps.36005.14273821654312693.614a2153-2264-4640-872a-02a2690944dd.0647a0bf-af72-4d44-b0c9-7e097abaa082">
-</p>
+  </p>
 
 
+<a href="https://apps.microsoft.com/store/detail/protecc-2fa-client/9PJX91M06TZS"><img width="35%" src="Assets\Get_it_from_Microsoft_Badge.svg" alt="Скачать Protecc из Microsoft Store"></a>
 
-
-<a href="https://apps.microsoft.com/store/detail/protecc-2fa-client/9PJX91M06TZS"><img width="35%" src="https://raw.githubusercontent.com/FireCubeStudios/Protecc/master/assets/Get_it_from_Microsoft_Badge.svg" alt="Скачать Protecc из Microsoft Store"></a>
+Get Protecc on [Microsoft Store](https://apps.microsoft.com/store/detail/protecc-2fa-client/9PJX91M06TZS) or [Releases](https://github.com/FireCubeStudios/Protecc/releases).
 
 
 https://github.com/kspearrin/Otp.NET
-  
+
   ### Заметки по сборке
   - Если при сборке проекта появляется ошибка "Сертификат не найден", необходимо открыть Package Manifest > Сертификаты, и сгенерировать собственный новый сертификат.
 
-# Познакомьтесь с людьми, сделавшими вклад в проект
+## Discord
+- Join our [Discord Channel](https://discord.gg/87qnqRB)
+
+# Meet our contributors
+
 <a href="https://github.com/FireCubeStudios/Protecc/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=FireCubeStudios/Protecc" />
 </a>
 
-# Лицензия 🔐
- 
-Распространяется под [лицензией MIT (на английском)](https://github.com/BootVirtual/Protecc/blob/master/LICENSE.txt)
+<hr />
 
-<hr>
-<h6 align="center">© Fire Cube Studios.
-<br>
+<h6 align="center">© Fire Cube Studios. <br>
 Все права защищены.</h6>
+<p align="center">
+    <a href="https://github.com/FireCubeStudios/Protecc/blob/master/LICENSE.txt"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/></a>
+</p>
+
+
+
