@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
 using Windows.UI.ViewManagement;
+using Windows.Globalization;
 
 namespace Protecc.Classes
 {
@@ -16,6 +17,11 @@ namespace Protecc.Classes
         {
             get { return (bool)localSettings.Values["WindowsHello"]; }
             set { localSettings.Values["WindowsHello"] = value; }
+        }
+        public Language AppLanguage
+        {
+            get { return (Language)localSettings.Values["Language"]; }
+            set { localSettings.Values["Language"] = value; }
         }
         public bool LaunchBlur
         {

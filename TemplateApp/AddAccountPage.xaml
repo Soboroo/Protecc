@@ -589,7 +589,8 @@
                     Source="Assets/Square44x44Logo.png" 
                     Width="16" 
                     Height="16"/>
-                <TextBlock x:Name="AppTitle"
+                <TextBlock x:Uid="AddAccountPageTitle"
+                    x:Name="AppTitle"
                     Text="Add Account - Protecc"
                     VerticalAlignment="Center"
                     Margin="12, 0, 0, 0"
@@ -601,10 +602,10 @@
                 <muxc:ProgressRing x:Name="Ring" IsActive="True" Visibility="Collapsed" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.ZIndex="2"/>
                 <Button Click="Close_Click" Margin="0, 12, 8, 0" Style="{ThemeResource CloseButton}" HorizontalAlignment="Right" VerticalAlignment="Top" Canvas.ZIndex="3"/>
                 <StackPanel x:Name="Content" HorizontalAlignment="center" VerticalAlignment="Center" Padding="16">
-                    <TextBlock FontSize="24" FontWeight="SemiBold" Margin="0, 0, 0, 12" Foreground="{ThemeResource AccentLinearGradientBrush}">New Account</TextBlock>
-                    <TextBlock FontWeight="SemiBold">Name:</TextBlock>
+                    <TextBlock x:Uid="AddAccountTitle" FontSize="24" FontWeight="SemiBold" Margin="0, 0, 0, 12" Foreground="{ThemeResource AccentLinearGradientBrush}">New Account</TextBlock>
+                    <TextBlock x:Uid="AccountGeneralNameTitle" FontWeight="SemiBold">Name:</TextBlock>
                     <toolkit:DropShadowPanel ShadowOpacity="0.4" OffsetX="4" CornerRadius="8" Margin="0, 12, 0, 16" OffsetY="4">
-                        <TextBox x:Name="NameBox" Height="20" Width="340" PlaceholderText="Enter a name..." Style="{ThemeResource KeyGlowTextBox}">
+                        <TextBox x:Uid="AccountGeneralNamePlaceholder" x:Name="NameBox" Height="20" Width="340" PlaceholderText="Enter a name..." Style="{ThemeResource KeyGlowTextBox}">
                             <ani:Explicit.Animations>
                                 <ani:AnimationSet x:Name="NameLoadAnimation" IsSequential="True">
                                     <ani:OffsetAnimation From="0" To="8,0,0" Duration="0:0:0.0625"/>
@@ -617,7 +618,7 @@
                             </ani:Explicit.Animations>
                         </TextBox>
                     </toolkit:DropShadowPanel>
-                    <TextBlock FontWeight="SemiBold">Key:</TextBlock>
+                    <TextBlock x:Uid="AddAccountKeyTitle" FontWeight="SemiBold">Key:</TextBlock>
                     <toolkit:DropShadowPanel ShadowOpacity="0.4" OffsetX="4" CornerRadius="8" Margin="0, 12, 0, 16" OffsetY="4">
                         <PasswordBox x:Name="KeyBox" Width="340" PlaceholderText="0000-0000-0000-0000" Style="{ThemeResource KeyGlowPasswordBoxStyle}">
                             <ani:Explicit.Animations>
@@ -632,7 +633,7 @@
                             </ani:Explicit.Animations>
                         </PasswordBox>
                     </toolkit:DropShadowPanel>
-                    <TextBlock FontWeight="SemiBold">Color:</TextBlock>
+                    <TextBlock x:Uid="AccountGeneralColorTitle" FontWeight="SemiBold">Color:</TextBlock>
                     <StackPanel Orientation="Horizontal" Margin="8, 12, 0, 12">
                         <toolkit:DropShadowPanel BlurRadius="16.0" IsMasked="True" ShadowOpacity="0.43" HorizontalAlignment="Center"
                                              OffsetX="0.0" OffsetY="4.0" Color="{x:Bind ColorPicker.Color, Mode=OneWay}">
@@ -652,7 +653,7 @@
                         <muxc:Expander.Header>
                             <StackPanel Orientation="Horizontal">
                                 <Icons:FluentSymbolIcon Symbol="Settings24"/>
-                                <TextBlock FontWeight="SemiBold" Margin="12, 2, 0, 0">Advanced</TextBlock>
+                                <TextBlock x:Uid="AddAccountAdvanced" FontWeight="SemiBold" Margin="12, 2, 0, 0">Advanced</TextBlock>
                             </StackPanel>
                         </muxc:Expander.Header>
                         <muxc:Expander.Content>
@@ -660,21 +661,21 @@
                                 <StackPanel>
                                     <Grid>
                                         <StackPanel HorizontalAlignment="Left">
-                                            <TextBlock FontWeight="SemiBold">Time:</TextBlock>
+                                            <TextBlock x:Uid="AddAccountTimeTitle" FontWeight="SemiBold">Time:</TextBlock>
                                             <muxc:RadioButtons x:Name="TimeOptions" SelectedIndex="0" Margin="0, 0, 0, 16">
-                                                <RadioButton Style="{ThemeResource GlowRadio}" Content="30 seconds"/>
-                                                <RadioButton Style="{ThemeResource GlowRadio}" Content="60 seconds"/>
+                                                <RadioButton x:Uid="AddAccount30Seconds" Style="{ThemeResource GlowRadio}" Content="30 seconds"/>
+                                                <RadioButton x:Uid="AddAccount60Seconds" Style="{ThemeResource GlowRadio}" Content="60 seconds"/>
                                             </muxc:RadioButtons>
                                         </StackPanel>
                                         <StackPanel HorizontalAlignment="Right">
-                                            <TextBlock FontWeight="SemiBold">Digits:</TextBlock>
+                                            <TextBlock x:Uid="AddAccountDigitsTitle" FontWeight="SemiBold">Digits:</TextBlock>
                                             <muxc:RadioButtons x:Name="DigitOptions" SelectedIndex="0" Margin="0, 0, 0, 16">
-                                                <RadioButton Style="{ThemeResource GlowRadio}" Content="6 digits"/>
-                                                <RadioButton Style="{ThemeResource GlowRadio}" Content="8 digits"/>
+                                                <RadioButton x:Uid="AddAccount6Digits" Style="{ThemeResource GlowRadio}" Content="6 digits"/>
+                                                <RadioButton x:Uid="AddAccount8Digits" Style="{ThemeResource GlowRadio}" Content="8 digits"/>
                                             </muxc:RadioButtons>
                                         </StackPanel>
                                     </Grid>
-                                    <TextBlock FontWeight="SemiBold">Hash Mode:</TextBlock>
+                                    <TextBlock x:Uid="AddAccountHashModeTitle" FontWeight="SemiBold">Hash Mode:</TextBlock>
                                     <ToolkitControls:DropShadowPanel Color="Black" ShadowOpacity="0.4" OffsetX="4" CornerRadius="8" Margin="0, 12, 0, 16" OffsetY="4">
                                         <ComboBox x:Name="EncryptionMode" Style="{ThemeResource GlowComboBox}" SelectedIndex="0" Width="300">
                                             <ComboBoxItem Style="{ThemeResource GlowComboBoxItem}" Content="Sha1"/>
@@ -688,7 +689,7 @@
                     </muxc:Expander>
                     <Button Click="Submit_Click" Style="{ThemeResource ToolbarButton}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="20, 24, 0, 0">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Margin="0, 0, 8, 0" VerticalAlignment="Center" Text="Next"/>
+                            <TextBlock x:Uid="AccountGeneralNext" Margin="0, 0, 8, 0" VerticalAlignment="Center" Text="Next"/>
                             <Icons:FluentSymbolIcon Symbol="ArrowRight20"/>
                         </StackPanel>
                     </Button>

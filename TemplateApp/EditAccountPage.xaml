@@ -700,7 +700,6 @@
                     HorizontalAlignment="center"
                     VerticalAlignment="Center">
                     <TextBlock
-                        x:Uid="EditAccountTitle"
                         Margin="0,0,0,12"
                         FontSize="24"
                         FontWeight="SemiBold"
