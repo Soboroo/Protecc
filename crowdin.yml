@@ -1,0 +1,3 @@
+files:
+  - source: /TemplateApp/Strings/en-US
+    translation: /TemplateApp/Strings/%locale_with_underscore%
