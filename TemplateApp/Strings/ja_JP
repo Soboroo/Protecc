@@ -118,54 +118,54 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AccountGeneralColorTitle.Text" xml:space="preserve">
-    <value>Color:</value>
+    <value>色:</value>
   </data>
   <data name="AccountGeneralNamePlaceholder.Text" xml:space="preserve">
-    <value>Enter A name...</value>
+    <value>名前を入力してください...</value>
     <comment>The placeholder of name input box</comment>
   </data>
   <data name="AccountGeneralNameTitle.Text" xml:space="preserve">
-    <value>Name:</value>
+    <value>名前:</value>
     <comment>The name of account</comment>
   </data>
   <data name="AccountGeneralNext.Text" xml:space="preserve">
-    <value>Next</value>
+    <value>次へ</value>
   </data>
   <data name="AddAccount30Seconds.Content" xml:space="preserve">
-    <value>30 seconds</value>
+    <value>30秒</value>
   </data>
   <data name="AddAccount60Seconds.Content" xml:space="preserve">
-    <value>60 seconds</value>
+    <value>60秒</value>
   </data>
   <data name="AddAccount6Digits.Content" xml:space="preserve">
-    <value>6 digits</value>
+    <value>6桁</value>
   </data>
   <data name="AddAccount8Digits.Content" xml:space="preserve">
-    <value>8 digits</value>
+    <value>8桁</value>
   </data>
   <data name="AddAccountAdvanced.Text" xml:space="preserve">
-    <value>Advanced</value>
+    <value>高度な設定</value>
   </data>
   <data name="AddAccountDigitsTitle.Text" xml:space="preserve">
-    <value>Digits:</value>
+    <value>桁数:</value>
   </data>
   <data name="AddAccountHashModeTitle.Text" xml:space="preserve">
-    <value>Hash Mode:</value>
+    <value>ハッシュモード:</value>
   </data>
   <data name="AddAccountKeyTitle.Text" xml:space="preserve">
-    <value>Key:</value>
+    <value>キー:</value>
   </data>
   <data name="AddAccountPageTitle.Text" xml:space="preserve">
-    <value>Add Account - Protecc</value>
+    <value>新しいアカウント - Protecc</value>
   </data>
   <data name="AddAccountTimeTitle.Text" xml:space="preserve">
-    <value>Time:</value>
+    <value>時間:</value>
   </data>
   <data name="AddAccountTitle.Text" xml:space="preserve">
-    <value>New Account</value>
+    <value>新しいアカウント</value>
     <comment>The title of AddAccountPage.xaml</comment>
   </data>
   <data name="EditAccountTitle.Text" xml:space="preserve">
-    <value>Edit Account</value>
+    <value>アカウントを編集</value>
   </data>
 </root>
