@@ -5,7 +5,7 @@
 <div align="center">
 <h1>Protecc</h1>
 
-<a href="https://github.com/FireCubeStudios/Protecc"><img src="https://img.shields.io/badge/欢迎您的-贡献-green"></a> 
+<a href="https://github.com/FireCubeStudios/Protecc"><img src="https://img.shields.io/badge/Contributions-welcome-green"></a>
 
 <a href="https://github.com/FireCubeStudios/Protecc/issues"><img src="https://img.shields.io/github/issues/FireCubeStudios/Protecc"></a>
 <a href="https://github.com/FireCubeStudios/Protecc/fork"><img src="https://img.shields.io/github/forks/FireCubeStudios/Protecc"></a>
@@ -13,42 +13,44 @@
 
 [English](https://github.com/FireCubeStudios/Protecc) | **Simplified Chinese(简体中文)**
 
-<p style="font-size:15px;">Protecc，Windows 平台上的两步验证器。支持几乎所有使用 TOTP 算法的账号。
-
-还有一些内置隐私保护措施，如隐私屏障与代码模糊。</p>
+<p style="font-size:15px;">Protecc is a modern open source 2FA TOTP code authenticator client for Windows with a wide range of customization and privacy features such as Windows Hello support, privacy filter and export.</p>
 </div>
 
-
-# 看看你的 👀
+# Preview ✨
 
 <p align="center">
   <img align="center" src="https://store-images.s-microsoft.com/image/apps.36005.14273821654312693.614a2153-2264-4640-872a-02a2690944dd.0647a0bf-af72-4d44-b0c9-7e097abaa082">
   </p>
 
-<a href="https://apps.microsoft.com/store/detail/protecc-2fa-client/9PJX91M06TZS"><img width="35%" src="https://raw.githubusercontent.com/PeritusDeveloper/Protecc/51091b1b131adbfd5edb51f1040cc3fcc470a248/Assets/Get_it_from_Microsoft_Badge.svg"></a>
+
+<a href="https://apps.microsoft.com/store/detail/protecc-2fa-client/9PJX91M06TZS"><img width="35%" src="Assets\Get_it_from_Microsoft_Badge.svg" alt="Get Protecc from Microsoft Store"></a>
 
 从[微软商店](https://apps.microsoft.com/store/detail/protecc-2fa-client/9PJX91M06TZS)或 [Releases](https://github.com/FireCubeStudios/Protecc/releases) 获取 Protecc。
 
-使用了 [kspearrin / Otp.NET](https://github.com/kspearrin/Otp.NET) 的代码。
-  
+
+https://github.com/kspearrin/Otp.NET
+
   ### 构建说明
   - 如果有未找到证书的错误，打开 Package Manifest > Certificates 生成自己的证书。
 
-# 贡献者 🥰
+## Discord
+- Join our [Discord Channel](https://discord.gg/87qnqRB)
+
+# Meet our contributors
 
 <a href="https://github.com/FireCubeStudios/Protecc/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=FireCubeStudios/Protecc" />
 </a>
 
-# 许可证 📄
+<hr />
 
-使用 [MIT LICENSE](LICENSE.txt) 许可证。
-
-
-<hr>
 <h6 align="center">© Fire Cube Studios. 2022
-<br>All rights reserved </h6>
-<h6 align="center">© Fire Cube Studios. 2022 
+<br>All rights reserved 2022 
 <br>
-保留所有权利。</h6>
+All Rights Reserved</h6>
+<p align="center">
+    <a href="https://github.com/FireCubeStudios/Protecc/blob/master/LICENSE.txt"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/></a>
+</p>
+
+
 
