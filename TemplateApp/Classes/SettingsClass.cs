@@ -18,9 +18,9 @@ namespace Protecc.Classes
             get { return (bool)localSettings.Values["WindowsHello"]; }
             set { localSettings.Values["WindowsHello"] = value; }
         }
-        public Language AppLanguage
+        public string AppLanguage
         {
-            get { return (Language)localSettings.Values["Language"]; }
+            get { return (string)localSettings.Values["Language"]; }
             set { localSettings.Values["Language"] = value; }
         }
         public bool LaunchBlur
@@ -54,11 +54,13 @@ namespace Protecc.Classes
             localSettings.Values["WindowsHello"] = localSettings.Values["CanRecord"] = localSettings.Values["LaunchBlur"] = false;
             localSettings.Values["FocusBlur"] = true;
             localSettings.Values["LaunchCount"] = 1;
+            localSettings.Values["Language"] = Windows.System.UserProfile.GlobalizationPreferences.Languages[0];
         }
 
         public void Update()
         {
             localSettings.Values["CanRecord"] = false;
+            localSettings.Values["Language"] = Windows.System.UserProfile.GlobalizationPreferences.Languages[0];
         }
     }
 }

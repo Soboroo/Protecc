@@ -8,6 +8,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.Globalization;
 using System.Collections;
+using Windows.ApplicationModel.Core;
 
 // The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
 
@@ -22,14 +23,15 @@ namespace Protecc.Controls
         public SettingsControl()
         {
             this.InitializeComponent();
-            if (ApplicationLanguages.PrimaryLanguageOverride == "")
-                ApplicationLanguages.PrimaryLanguageOverride = Windows.System.UserProfile.GlobalizationPreferences.Languages[0];
             foreach (var item in ApplicationLanguages.ManifestLanguages)
             {
                 Language language = new(item);
                 Languages.Add(language);
-                if (item == ApplicationLanguages.PrimaryLanguageOverride)
+                if (item == Settings.AppLanguage)
+                {
+                    Settings.AppLanguage = item;
                     SelectedLanguage = language;
+                }
             };
             SetupSettings();
         }
@@ -60,7 +62,19 @@ namespace Protecc.Controls
 
         private void LanguageComboBox_SelectionChanged(object sender, RoutedEventArgs e)
         {
-            ApplicationLanguages.PrimaryLanguageOverride = ((Language)LanguageComboBox.SelectedItem).LanguageTag;
+            Settings.AppLanguage = SelectedLanguage.LanguageTag;
+            if (SelectedLanguage.LanguageTag != ApplicationLanguages.PrimaryLanguageOverride)
+            {
+                ReloadButton.Visibility = Visibility.Visible;
+            } else
+            {
+                ReloadButton.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            await CoreApplication.RequestRestartAsync("");
         }
     }
 }

@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -170,5 +170,95 @@
   </data>
   <data name="EditAccountTitle.Text" xml:space="preserve">
     <value>Edit Account</value>
+  </data>
+  <data name="SettingsAboutTitle.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="SettingsBlurDescription.Text" xml:space="preserve">
+    <value>Blur codes when app is unfocused</value>
+  </data>
+  <data name="SettingsBlurTitle.Text" xml:space="preserve">
+    <value>Blur codes</value>
+  </data>
+  <data name="SettingsCaptureDescription.Text" xml:space="preserve">
+    <value>Toggle screen capturing app</value>
+  </data>
+  <data name="SettingsCaptureTitle.Text" xml:space="preserve">
+    <value>Screen capture</value>
+  </data>
+  <data name="SettingsCreditsTitle.Text" xml:space="preserve">
+    <value>Credits</value>
+  </data>
+  <data name="SettingsDeveloperTitle.Text" xml:space="preserve">
+    <value>Developer</value>
+  </data>
+  <data name="SettingsDiscordButton.Content" xml:space="preserve">
+    <value>Join</value>
+  </data>
+  <data name="SettingsDiscordDescription.Text" xml:space="preserve">
+    <value>Give feedback and get latest updates</value>
+  </data>
+  <data name="SettingsDiscordTitle.Text" xml:space="preserve">
+    <value>Protecc Discord</value>
+  </data>
+  <data name="SettingsExportButton.Content" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="SettingsExportDescription.Text" xml:space="preserve">
+    <value>Export keys as YAML</value>
+  </data>
+  <data name="SettingsExportTitle.Text" xml:space="preserve">
+    <value>Export keys</value>
+  </data>
+  <data name="SettingsFilterDescription.Text" xml:space="preserve">
+    <value>Shows the privacy filter by default</value>
+  </data>
+  <data name="SettingsFilterTitle.Text" xml:space="preserve">
+    <value>Show filter on launch</value>
+  </data>
+  <data name="SettingsGithubButton.Content" xml:space="preserve">
+    <value>GitHub Repo</value>
+  </data>
+  <data name="SettingsIconDesignerTitle.Text" xml:space="preserve">
+    <value>Icon designer</value>
+  </data>
+  <data name="SettingsLanguageButton.Content" xml:space="preserve">
+    <value>Reload App</value>
+  </data>
+  <data name="SettingsLanguageTitle.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="SettingsSpecialThanksTitle.Text" xml:space="preserve">
+    <value>Special Thanks</value>
+  </data>
+  <data name="SettingsTitle.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="SettingsTwitterButton.Content" xml:space="preserve">
+    <value>Follow</value>
+  </data>
+  <data name="SettingsTwitterDescription.Text" xml:space="preserve">
+    <value>Follow for latest updates</value>
+  </data>
+  <data name="SettingsTwitterTitle.Text" xml:space="preserve">
+    <value>FireCube Twitter</value>
+  </data>
+  <data name="SettingsViewOOBEButton.Content" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="SettingsViewOOBEDescription.Text" xml:space="preserve">
+    <value>Open the setup page</value>
+  </data>
+  <data name="SettingsViewOOBETitle.Text" xml:space="preserve">
+    <value>View OOBE</value>
+  </data>
+  <data name="SettingsWindowsHelloDescription.Text" xml:space="preserve">
+    <value>Require Windows Hello on launch</value>
+  </data>
+  <data name="SettingsWindowsHelloNotAvailable.Text" xml:space="preserve">
+    <value>*Windows Hello not setup</value>
+  </data>
+  <data name="SettingsWindowsHelloTitle.Text" xml:space="preserve">
+    <value>Windows Hello authentication</value>
   </data>
 </root>
