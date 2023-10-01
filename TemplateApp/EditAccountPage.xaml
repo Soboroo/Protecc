@@ -706,7 +706,7 @@
                         Foreground="{ThemeResource AccentLinearGradientBrush}">
                         Edit Account
                     </TextBlock>
-                    <TextBlock FontWeight="SemiBold">Name:</TextBlock>
+                    <TextBlock x:Uid="AccountGeneralNameTitle" FontWeight="SemiBold">Name:</TextBlock>
                     <toolkit:DropShadowPanel
                         Margin="0,12,0,16"
                         CornerRadius="8"

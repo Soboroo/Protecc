@@ -22,6 +22,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.Globalization;
 
 namespace Protecc
 {
@@ -79,6 +80,7 @@ namespace Protecc
                     // configuring the new page by passing required information as a navigation
                     // parameter
                     SettingsClass Settings = new();
+                    ApplicationLanguages.PrimaryLanguageOverride = Settings.AppLanguage;
                     if (SystemInformation.Instance.IsFirstRun)
                     {
                         ApplicationData.Current.LocalSettings.Values["LaunchCount"] = 1;
