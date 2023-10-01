@@ -95,6 +95,7 @@ namespace Protecc.Controls
 
         private async void Copy_Click(object sender, RoutedEventArgs e)
         {
+            var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
             CopyIcon.Symbol = Fluent.Icons.FluentSymbol.Copy20;
             try
             {
@@ -104,13 +105,13 @@ namespace Protecc.Controls
                 Clipboard.SetContent(dataPackage);
                 CopyIcon.Symbol = Fluent.Icons.FluentSymbol.Checkmark20;
                 // Show notification
-                InAppNotificationComponent.Show("Code copied to clipboard!", 3000);
+                InAppNotificationComponent.Show(resourceLoader.GetString("NotificationCopySucceed/Text"), 3000);
             }
             catch
             {
                 CopyIcon.Symbol = Fluent.Icons.FluentSymbol.ErrorCircle20;
                 // Inform user about error
-                InAppNotificationComponent.Show("An error occurred while copying to clipboard.", 3000);
+                InAppNotificationComponent.Show(resourceLoader.GetString("NotificationCopyFailed/Text"), 3000);
 
             }
             await Task.Delay(2000);
@@ -134,6 +135,7 @@ namespace Protecc.Controls
         /// </summary>
         private void Content_DoubleTapped(object sender, RoutedEventArgs e)
         {
+            var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
             try
             {
                 // Remove spaces and copy to clipboard
@@ -143,12 +145,12 @@ namespace Protecc.Controls
                 Clipboard.SetContent(content);
 
                 // Show notification
-                InAppNotificationComponent.Show("Code copied to clipboard!", 3000);
+                InAppNotificationComponent.Show(resourceLoader.GetString("NotificationCopySucceed/Text"), 3000);
             }
             catch
             {
                 // Inform user about error
-                InAppNotificationComponent.Show("An error occurred while copying to clipboard.", 3000);
+                InAppNotificationComponent.Show(resourceLoader.GetString("NotificationCopyFailed/Text"), 3000);
             }
         }
 

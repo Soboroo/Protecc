@@ -39,7 +39,7 @@
         </Border>
         <Grid Padding="32, 48, 32, 48">
             <Grid VerticalAlignment="Top">
-                <TextBlock FontSize="32" FontWeight="SemiBold">Your accounts</TextBlock>
+                <TextBlock x:Uid="MainYourAccountsTitleY" FontSize="32" FontWeight="SemiBold">Your accounts</TextBlock>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <ani:Explicit.Animations>
                         <ani:AnimationSet x:Name="LoadAnimation">
@@ -54,15 +54,15 @@
                     <Button x:Name="AddButton" Loaded="AddButton_Loaded" IsTabStop="False" IsEnabled="{x:Bind Helpers:UIHelper.CanAddNew(), Mode=OneWay}" Style="{ThemeResource ToolbarButton}">
                         <StackPanel Orientation="Horizontal">
                             <icons:FluentSymbolIcon Symbol="Add20"/>
-                            <TextBlock Margin="8, 0, 0, 0" VerticalAlignment="Center" Text="Add"/>
+                            <TextBlock x:Uid="MainAddButton"  Margin="8, 0, 0, 0" VerticalAlignment="Center" Text="Add"/>
                         </StackPanel>
                         <Button.Flyout>
                             <MenuFlyout Placement="Bottom">
-                                <MenuFlyoutSubItem Text="Scan QR">
-                                    <MenuFlyoutItem Text="From Camera" Click="ScanQR_Click"/>
-                                    <MenuFlyoutItem Text="From Screen" Click="FromScreen_Click"/>
+                                <MenuFlyoutSubItem x:Uid="MainScanQRFlyout" Text="Scan QR">
+                                    <MenuFlyoutItem x:Uid="MainFromCameraFlyout" Text="From Camera" Click="ScanQR_Click"/>
+                                    <MenuFlyoutItem x:Uid="MainFromScreenFlyout" Text="From Screen" Click="FromScreen_Click"/>
                                 </MenuFlyoutSubItem>
-                                <MenuFlyoutItem Text="Enter Key" Click="EnterKey_Click"/>
+                                <MenuFlyoutItem x:Uid="MainEnterKeyFlyout" Text="Enter Key" Click="EnterKey_Click"/>
                             </MenuFlyout>
                         </Button.Flyout>
                     </Button>

@@ -39,7 +39,8 @@ namespace Protecc.Controls
         {
             if (!await KeyCredentialManager.IsSupportedAsync())
             {
-                WindowsHelloText.Text = "*Windows Hello not setup";
+                var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
+                WindowsHelloText.Text = resourceLoader.GetString("SettingsWindowsHelloNotAvailable/Text");
                 WindowsHelloSwitch.IsEnabled = false;
             }
         }

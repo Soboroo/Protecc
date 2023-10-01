@@ -13,7 +13,10 @@ namespace Protecc.Helpers
         public static bool NullBoolToBool(bool? boolean) => (bool)boolean;
 
         // Privacy filter button text & icon 
-        public static string PrivacyToText(bool? boolean) => (boolean ?? false) ? "Hidden" : "Visible";
+        public static string PrivacyToText(bool? boolean) {
+            var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
+            return boolean ?? false ? resourceLoader.GetString("MainHiddenButton/Text") : resourceLoader.GetString("MainVisibleButton/Text");
+        }
         public static FluentSymbol PrivacyToIcon(bool? boolean) => (boolean ?? false) ? FluentSymbol.EyeHide20 : FluentSymbol.EyeShow20;
 
         // List can only have 20 items so disable Add new item button
