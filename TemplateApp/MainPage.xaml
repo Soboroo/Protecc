@@ -39,7 +39,7 @@
         </Border>
         <Grid Padding="32, 48, 32, 48">
             <Grid VerticalAlignment="Top">
-                <TextBlock x:Uid="MainYourAccountsTitleY" FontSize="32" FontWeight="SemiBold">Your accounts</TextBlock>
+                <TextBlock x:Uid="MainYourAccountsTitle" FontSize="32" FontWeight="SemiBold">Your accounts</TextBlock>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <ani:Explicit.Animations>
                         <ani:AnimationSet x:Name="LoadAnimation">
