@@ -172,34 +172,34 @@
     <value>계정 편집</value>
   </data>
   <data name="MainAddButton.Text" xml:space="preserve">
-    <value>Add</value>
+    <value>추가</value>
   </data>
   <data name="MainEnterKeyFlyout.Text" xml:space="preserve">
-    <value>Enter Key</value>
+    <value>키 입력하기</value>
   </data>
   <data name="MainFromCameraFlyout.Text" xml:space="preserve">
-    <value>From Camera</value>
+    <value>카메라로 스캔</value>
   </data>
   <data name="MainFromScreenFlyout.Text" xml:space="preserve">
-    <value>From Screen</value>
+    <value>화면 스캔</value>
   </data>
   <data name="MainHiddenButton.Text" xml:space="preserve">
-    <value>Hidden</value>
+    <value>숨김</value>
   </data>
   <data name="MainScanQRFlyout.Text" xml:space="preserve">
-    <value>Scan QR</value>
+    <value>QR코드 스캔</value>
   </data>
   <data name="MainVisibleButton.Text" xml:space="preserve">
-    <value>Visible</value>
+    <value>표시</value>
   </data>
   <data name="MainYourAccountsTitle.Text" xml:space="preserve">
-    <value>Your Accounts</value>
+    <value>내 계정</value>
   </data>
   <data name="NotificationCopyFailed.Text" xml:space="preserve">
-    <value>An error occurred while copying to clipboard.</value>
+    <value>클립보드에 복사하는 동안 오류가 발생했습니다.</value>
   </data>
   <data name="NotificationCopySucceed.Text" xml:space="preserve">
-    <value>Code copied to clipboard!</value>
+    <value>코드를 클립보드에 복사했습니다!</value>
   </data>
   <data name="SettingsAboutTitle.Text" xml:space="preserve">
     <value>이 앱의 정보</value>
