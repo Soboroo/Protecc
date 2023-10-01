@@ -166,10 +166,40 @@
     <comment>The title of AddAccountPage.xaml</comment>
   </data>
   <data name="EditAccountPageTitle.Text" xml:space="preserve">
-    <value>Edit Account - Protecc</value>
+    <value>Add Account - Protecc</value>
   </data>
   <data name="EditAccountTitle.Text" xml:space="preserve">
     <value>Edit Account</value>
+  </data>
+  <data name="MainAddButton.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="MainEnterKeyFlyout.Text" xml:space="preserve">
+    <value>Enter Key</value>
+  </data>
+  <data name="MainFromCameraFlyout.Text" xml:space="preserve">
+    <value>From Camera</value>
+  </data>
+  <data name="MainFromScreenFlyout.Text" xml:space="preserve">
+    <value>From Screen</value>
+  </data>
+  <data name="MainHiddenButton.Text" xml:space="preserve">
+    <value>Hidden</value>
+  </data>
+  <data name="MainScanQRFlyout.Text" xml:space="preserve">
+    <value>Scan QR</value>
+  </data>
+  <data name="MainVisibleButton.Text" xml:space="preserve">
+    <value>Visible</value>
+  </data>
+  <data name="MainYourAccountsTitle.Text" xml:space="preserve">
+    <value>Your Accounts</value>
+  </data>
+  <data name="NotificationCopyFailed.Text" xml:space="preserve">
+    <value>An error occurred while copying to clipboard.</value>
+  </data>
+  <data name="NotificationCopySucceed.Text" xml:space="preserve">
+    <value>Code copied to clipboard!</value>
   </data>
   <data name="SettingsAboutTitle.Text" xml:space="preserve">
     <value>About</value>
