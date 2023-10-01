@@ -45,8 +45,7 @@ https://github.com/kspearrin/Otp.NET
 <hr />
 
 <h6 align="center">© Fire Cube Studios. 2022 
-<br>
-All Rights Reserved</h6>
+<br> All Rights Reserved</h6>
 <p align="center">
     <a href="https://github.com/FireCubeStudios/Protecc/blob/master/LICENSE.txt"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/></a>
 </p>
