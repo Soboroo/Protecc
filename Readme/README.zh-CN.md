@@ -47,6 +47,7 @@ https://github.com/kspearrin/Otp.NET
 <h6 align="center">© Fire Cube Studios. 2022
 <br>All rights reserved © Fire Cube Studios. 2022
 <br>All rights reserved © Fire Cube Studios. 2022
+<br>All rights reserved © Fire Cube Studios. 2022
 <br>All rights reserved 2022 
 <br>
 All Rights Reserved</h6>
