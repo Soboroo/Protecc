@@ -49,7 +49,8 @@
                     Source="Assets/Square44x44Logo.png" 
                     Width="16" 
                     Height="16"/>
-                <TextBlock x:Name="AppTitle"
+                <TextBlock x:Uid="OOBEPageTitle"
+                    x:Name="AppTitle"
                     Text="Setup - Protecc"
                     VerticalAlignment="Center"
                     Margin="12, 0, 0, 0"
@@ -60,7 +61,7 @@
         <Grid x:Name="Container">
             <StackPanel Canvas.ZIndex="10" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal" x:Name="OpenRing" Visibility="Collapsed" >
                 <muxc:ProgressRing IsActive="True" Height="80" Width="80"/>
-                <TextBlock FontWeight="SemiBold" FontSize="24" VerticalAlignment="Center" Margin="24, 0, 0, 0">Loading...</TextBlock>
+                <TextBlock x:Uid="OOBELoading" FontWeight="SemiBold" FontSize="24" VerticalAlignment="Center" Margin="24, 0, 0, 0">Loading...</TextBlock>
             </StackPanel>
             <Rectangle x:Name="hostForVisual" Fill="Transparent"/>
             <StackPanel HorizontalAlignment="Center" Canvas.ZIndex="2"  VerticalAlignment="Center">
@@ -84,11 +85,11 @@
                                                 <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
                                             </icons:FluentSymbolIcon.RenderTransform>
                                         </icons:FluentSymbolIcon>
-                                        <TextBlock Text="Welcome to Protecc!" FontSize="32" Margin="0,0,0,12" FontWeight="SemiBold" CharacterSpacing="-20"/>
-                                        <TextBlock Opacity="0.70" LineHeight="24" Width="325" HorizontalAlignment="Left"
+                                        <TextBlock x:Uid="OOBECard1Title" Text="Welcome to Protecc!" FontSize="32" Margin="0,0,0,12" FontWeight="SemiBold" CharacterSpacing="-20"/>
+                                        <TextBlock x:Uid="OOBECard1Content" Opacity="0.70" LineHeight="24" Width="325" HorizontalAlignment="Left"
                             Text="Thank you for downloading Protecc. After following this quick setup, you can begin using the app!" TextWrapping="WrapWholeWords"/>
                                         <StackPanel Orientation="Horizontal" Margin="0,172,0,0" >
-                                            <Button Content="Release Notes" Visibility="Collapsed" Background="Transparent" IsEnabled="False" BorderThickness="0.5" BorderBrush="{ThemeResource HvidSortBrush}" Padding="16,8,16,8"/>
+                                            <Button x:Uid="OOBECard1ReleaseNotesButton" Content="Release Notes" Visibility="Collapsed" Background="Transparent" IsEnabled="False" BorderThickness="0.5" BorderBrush="{ThemeResource HvidSortBrush}" Padding="16,8,16,8"/>
                                         </StackPanel>
                                     </StackPanel>
                                 </StackPanel>
@@ -107,25 +108,25 @@
                                                 <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
                                             </icons:FluentSymbolIcon.RenderTransform>
                                         </icons:FluentSymbolIcon>
-                                        <TextBlock Text="Customize Settings" FontSize="32" Margin="0,0,0,12" FontWeight="SemiBold" CharacterSpacing="-20"/>
+                                        <TextBlock x:Uid="OOBECard2Title" Text="Customize Settings" FontSize="32" Margin="0,0,0,12" FontWeight="SemiBold" CharacterSpacing="-20"/>
                                         <Grid Padding="12, 8, 12, 4" Background="{ThemeResource LayerFillColorDefaultBrush}" Margin="4, 8, 12, 8" CornerRadius="4" BorderThickness="1" BorderBrush="{ThemeResource MicaBorderBrush}">
                                             <StackPanel HorizontalAlignment="Left">
-                                                <TextBlock Text="Windows Hello authentication" MaxWidth="220" FontWeight="SemiBold" Margin="0, 0, 0, 4"/>
-                                                <TextBlock x:Name="WindowsHelloText" Text="Require Windows Hello on launch" MaxWidth="220" Opacity="0.7" />
+                                                <TextBlock x:Uid="SettingsWindowsHelloTitle" Text="Windows Hello authentication" MaxWidth="220" FontWeight="SemiBold" Margin="0, 0, 0, 4"/>
+                                                <TextBlock x:Uid="SettingsWindowsHelloDescription" x:Name="WindowsHelloText" Text="Require Windows Hello on launch" MaxWidth="220" Opacity="0.7" />
                                             </StackPanel>
                                             <ToggleSwitch x:Name="WindowsHelloSwitch"  IsOn="{x:Bind Settings.WindowsHello, Mode=TwoWay}" Margin="4, 4, -80, 4" Style="{ThemeResource GlowSwitch}" HorizontalAlignment="Right"/>
                                         </Grid>
                                         <Grid Padding="12, 4, 12, 4" Background="{ThemeResource LayerFillColorDefaultBrush}" Margin="4, 8, 12, 8" CornerRadius="4" BorderThickness="1" BorderBrush="{ThemeResource MicaBorderBrush}">
                                             <StackPanel HorizontalAlignment="Left">
-                                                <TextBlock Text="Blur codes" MaxWidth="220" FontWeight="SemiBold" Margin="0, 0, 0, 4"/>
-                                                <TextBlock Text="Blur codes when app is unfocused" MaxWidth="220" Opacity="0.7" />
+                                                <TextBlock x:Uid="SettingsBlurTitle" Text="Blur codes" MaxWidth="220" FontWeight="SemiBold" Margin="0, 0, 0, 4"/>
+                                                <TextBlock x:Uid="SettingsBlurDescription" Text="Blur codes when app is unfocused" MaxWidth="220" Opacity="0.7" />
                                             </StackPanel>
                                             <ToggleSwitch x:Name="FocusBlur" IsOn="{x:Bind Settings.FocusBlur, Mode=TwoWay}" Margin="4, 4, -80, 4" Style="{ThemeResource GlowSwitch}" HorizontalAlignment="Right"/>
                                         </Grid>
                                         <Grid Padding="12, 4, 12, 4" Background="{ThemeResource LayerFillColorDefaultBrush}" Margin="4, 8, 12, 8" CornerRadius="4" BorderThickness="1" BorderBrush="{ThemeResource MicaBorderBrush}">
                                             <StackPanel HorizontalAlignment="Left">
-                                                <TextBlock Text="Show filter on launch" MaxWidth="220" FontWeight="SemiBold" Margin="0, 0, 0, 4"/>
-                                                <TextBlock Text="Shows the privacy filter by default" MaxWidth="220" Opacity="0.7" />
+                                                <TextBlock x:Uid="SettingsFilterTitle" Text="Show filter on launch" MaxWidth="220" FontWeight="SemiBold" Margin="0, 0, 0, 4"/>
+                                                <TextBlock x:Uid="SettingsFilterDescription" Text="Shows the privacy filter by default" MaxWidth="220" Opacity="0.7" />
                                             </StackPanel>
                                             <ToggleSwitch x:Name="LaunchBlur" IsOn="{x:Bind Settings.LaunchBlur, Mode=TwoWay}" Margin="4, 4, -80, 4" Style="{ThemeResource GlowSwitch}" HorizontalAlignment="Right"/>
                                         </Grid>
@@ -145,8 +146,8 @@
                                                 <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
                                             </icons:FluentSymbolIcon.RenderTransform>
                                         </icons:FluentSymbolIcon>
-                                        <TextBlock Text="Privacy" FontSize="32" Margin="0,0,0,12" FontWeight="SemiBold" CharacterSpacing="-20"/>
-                                        <TextBlock LineHeight="24" HorizontalAlignment="left" Margin="0, 0, 24, 0">
+                                        <TextBlock x:Uid="OOBECard3Title" Text="Privacy" FontSize="32" Margin="0,0,0,12" FontWeight="SemiBold" CharacterSpacing="-20"/>
+                                        <TextBlock x:Uid="OOBECard3Content" LineHeight="24" HorizontalAlignment="left" Margin="0, 0, 24, 0">
                                             ✓ Privacy Filter
                                             <LineBreak/>
                                             ✓ Code Blurring
@@ -155,7 +156,7 @@
                                             <LineBreak/>
                                             ✓ Open source
                                         </TextBlock>
-                                        <HyperlinkButton Margin="6, 0, 0, 0" Content="GitHub" NavigateUri="https://github.com/FireCubeStudios/Protecc"/>
+                                        <HyperlinkButton x:Uid="OOBECard3GitHubButton" Margin="6, 0, 0, 0" Content="GitHub" NavigateUri="https://github.com/FireCubeStudios/Protecc"/>
                                     </StackPanel>
                                 </StackPanel>
                             </Grid>
@@ -163,12 +164,12 @@
                         <FlipViewItem >
                             <StackPanel Orientation="Vertical" Margin="28,120,28,0" Width="375" HorizontalAlignment="Center">
                                 <FontIcon Glyph="&#xE001;" FontSize="40" Foreground="{ThemeResource ResponsiveAccentBrush1}" HorizontalAlignment="Center" Margin="0,0,0,16" />
-                                <TextBlock Text="You're all set!" FontSize="32" Margin="0,0,0,12" FontWeight="SemiBold" CharacterSpacing="-20" HorizontalAlignment="Center"/>
+                                <TextBlock x:Uid="OOBECard4Title" Text="You're all set!" FontSize="32" Margin="0,0,0,12" FontWeight="SemiBold" CharacterSpacing="-20" HorizontalAlignment="Center"/>
                                 <Button HorizontalAlignment="Center" Padding="16,10,16,10" Style="{StaticResource AccentButtonStyle}" BorderBrush="{ThemeResource MicaBorderBrush}" Margin="0, 40,0,0" Click="CompletedOOBE_Click">
                                     <Button.Content >
                                         <StackPanel Orientation="Horizontal">
                                             <FontIcon Glyph="&#xE0AB;" Margin="0,0,12,0" FontSize="14"/>
-                                            <TextBlock Text="Start using Protecc"/>
+                                            <TextBlock x:Uid="OOBECard4StartButton" Text="Start using Protecc"/>
                                         </StackPanel>
                                     </Button.Content>
                                 </Button>
@@ -177,14 +178,14 @@
                     </FlipView>
                 </controls:DropShadowPanel>
                 <StackPanel x:Name="Stepper">
-                    <TextBlock HorizontalAlignment="Center" x:Name="Section" Margin="0, 20, 0, 12" FontWeight="SemiBold">Setup</TextBlock>
+                    <TextBlock x:Uid="OOBEStepperTitle" HorizontalAlignment="Center" x:Name="Section" Margin="0, 20, 0, 12" FontWeight="SemiBold">Setup</TextBlock>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 0, 0, 12">
                         <muxc:ProgressBar x:Name="bar1" Width="100" Minimum="0" Maximum="20" Value="10" Margin="4, 0, 4, 0">
                         </muxc:ProgressBar>
                         <muxc:ProgressBar x:Name="bar2" Width="100" Minimum="0" Maximum="20" Value="0" Margin="4, 0, 4, 0">
                         </muxc:ProgressBar>
                     </StackPanel>
-                    <TextBlock HorizontalAlignment="Center" x:Name="Steps">Step 1/4</TextBlock>
+                    <TextBlock x:Name="Steps" HorizontalAlignment="Center" >Step 1/4</TextBlock>
                 </StackPanel>
             </StackPanel>
             <Button Canvas.ZIndex="2" x:Name="Skipper" Background="Transparent" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="34" 
@@ -192,7 +193,7 @@
                 <Button.Content>
                     <StackPanel Orientation="Horizontal">
                         <FontIcon Glyph="&#xE0AB;" FontSize="12" Margin="0,0,12 ,0"/>
-                        <TextBlock Text="Skip"/>
+                        <TextBlock x:Uid="OOBESkipButton" Text="Skip"/>
                     </StackPanel>
                 </Button.Content>
             </Button>
