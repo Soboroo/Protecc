@@ -28,7 +28,8 @@
                     Source="Assets/Square44x44Logo.png" 
                     Width="16" 
                     Height="16"/>
-                <TextBlock x:Name="AppTitle"
+                <TextBlock x:Uid="WhatsNewPageTitle"
+                    x:Name="AppTitle"
                     Text="What's new - Protecc"
                     VerticalAlignment="Center"
                     Margin="12, 0, 0, 0"
@@ -40,7 +41,7 @@
                 <Button Click="Go_Click" Margin="0, 12, 8, 0" Style="{ThemeResource CloseButton}" HorizontalAlignment="Right" VerticalAlignment="Top" Canvas.ZIndex="3"/>
                 <muxc:ProgressRing x:Name="Ring" IsActive="True" Visibility="Collapsed" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.ZIndex="2"/>
                 <StackPanel x:Name="Content" HorizontalAlignment="center" VerticalAlignment="Center" Padding="16">
-                    <TextBlock FontSize="24" FontWeight="SemiBold" Margin="0, 0, 0, 12">What's new</TextBlock>
+                    <TextBlock x:Uid="WhatsNewTitle" FontSize="24" FontWeight="SemiBold" Margin="0, 0, 0, 12">What's new</TextBlock>
                     <TextBlock>
                         ✓ Fixed exporting bug - thanks to Pull request #32
                         <LineBreak/>
