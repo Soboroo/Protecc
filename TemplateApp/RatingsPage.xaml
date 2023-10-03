@@ -35,7 +35,8 @@
                     Source="Assets/Square44x44Logo.png" 
                     Width="16" 
                     Height="16"/>
-                <TextBlock x:Name="AppTitle"
+                <TextBlock x:Uid="RatingsPageTitle"
+                    x:Name="AppTitle"
                     Text="What's new - Protecc"
                     VerticalAlignment="Center"
                     Margin="12, 0, 0, 0"
@@ -47,8 +48,8 @@
                 <Button Click="Go_Click" Margin="0, 12, 8, 0" Style="{ThemeResource CloseButton}" HorizontalAlignment="Right" VerticalAlignment="Top" Canvas.ZIndex="3"/>
                 <muxc:ProgressRing x:Name="Ring" IsActive="True" Visibility="Collapsed" Height="40" Width="40" HorizontalAlignment="Center" VerticalAlignment="Center" Canvas.ZIndex="2"/>
                 <StackPanel x:Name="Content" HorizontalAlignment="center" VerticalAlignment="Center" Padding="16">
-                    <TextBlock FontSize="24" FontWeight="SemiBold" Margin="0, 0, 0, 2">Rate our App!🌟</TextBlock>
-                    <TextBlock>
+                    <TextBlock x:Uid="RatingsTitle" FontSize="24" FontWeight="SemiBold" Margin="0, 0, 0, 2">Rate our App!🌟</TextBlock>
+                    <TextBlock x:Uid="RatingsDescription">
                         If you are enjoying the app please take a moment to rate it!
                     </TextBlock>
                     <Button Click="Rate_Click" Style="{ThemeResource ToolbarButton}" RenderTransformOrigin="0.5, 0.5" Margin="0, 12, 0, 0" BorderBrush="{ThemeResource MicaBorderBrush}" VerticalAlignment="center" HorizontalAlignment="Center" Canvas.ZIndex="2">
@@ -57,7 +58,7 @@
                         </Button.RenderTransform>
                         <StackPanel Orientation="Horizontal">
                             <Icons:FluentSymbolIcon Margin="0, 0, 4, 0" Foreground="{ThemeResource RateLinearGradientBrush}" Symbol="Star20Filled"/>
-                            <TextBlock VerticalAlignment="Center" Text="Rate it!"/>
+                            <TextBlock x:Uid="RatingsRateItButton" VerticalAlignment="Center" Text="Rate it!"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>

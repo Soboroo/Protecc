@@ -41,7 +41,8 @@
                     Source="Assets/Square44x44Logo.png" 
                     Width="16" 
                     Height="16"/>
-                <TextBlock x:Name="AppTitle"
+                <TextBlock x:Uid="AuthenticationPageTitle"
+                    x:Name="AppTitle"
                     Text="Authenticate - Protecc"
                     VerticalAlignment="Center"
                     Margin="12, 0, 0, 0"
@@ -56,7 +57,7 @@
                     <Button x:Name="AuthButton" Click="Authenticate_Click" Style="{ThemeResource ExperimentalToolbarButton}" BorderBrush="{ThemeResource MicaBorderBrush}" VerticalAlignment="center" HorizontalAlignment="Center" Canvas.ZIndex="2">
                         <StackPanel Orientation="Horizontal">
                             <Icons:FluentSymbolIcon Margin="0, 0, 4, 0" Symbol="Key20"/>
-                            <TextBlock VerticalAlignment="Center" Text="Authenticate"/>
+                            <TextBlock x:Uid="AuthenticationAuthButton" VerticalAlignment="Center" Text="Authenticate"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
