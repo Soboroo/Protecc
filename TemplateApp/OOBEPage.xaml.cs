@@ -46,7 +46,8 @@ namespace Protecc
         {
             if (!await KeyCredentialManager.IsSupportedAsync())
             {
-                WindowsHelloText.Text = "*Windows Hello not setup";
+                var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
+                WindowsHelloText.Text = resourceLoader.GetString("SettingsWindowsHelloNotAvailable/Text");
                 WindowsHelloSwitch.IsEnabled = false;
             }
         }
@@ -62,7 +63,8 @@ namespace Protecc
         {
             try
             {
-                Steps.Text = "Step " + (FlappyBird.SelectedIndex + 1) + "/4";
+                var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
+                Steps.Text = string.Format(resourceLoader.GetString("OOBEStepperContent/Text"), FlappyBird.SelectedIndex + 1);
                 if (FlappyBird.SelectedIndex <= 1)
                 {
                     // Section.Text = "Feature showcase";
