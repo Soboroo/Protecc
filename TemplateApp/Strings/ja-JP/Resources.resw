@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountGeneralColorTitle.Text" xml:space="preserve">
+    <value>Color:</value>
+  </data>
+  <data name="AccountGeneralNamePlaceholder.Text" xml:space="preserve">
+    <value>Enter A name...</value>
+  </data>
+  <data name="AccountGeneralNameTitle.Text" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="AccountGeneralNext.Text" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="AddAccount30Seconds.Content" xml:space="preserve">
+    <value>30 seconds</value>
+  </data>
+  <data name="AddAccount60Seconds.Content" xml:space="preserve">
+    <value>60 seconds</value>
+  </data>
+  <data name="AddAccount6Digits.Content" xml:space="preserve">
+    <value>6 digits</value>
+  </data>
+  <data name="AddAccount8Digits.Content" xml:space="preserve">
+    <value>8 digits</value>
+  </data>
+  <data name="AddAccountAdvanced.Text" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="AddAccountDigitsTitle.Text" xml:space="preserve">
+    <value>Digits:</value>
+  </data>
+  <data name="AddAccountHashModeTitle.Text" xml:space="preserve">
+    <value>Hash Mode:</value>
+  </data>
+  <data name="AddAccountKeyTitle.Text" xml:space="preserve">
+    <value>Key:</value>
+  </data>
+  <data name="AddAccountPageTitle.Text" xml:space="preserve">
+    <value>Add Account - Protecc</value>
+  </data>
+  <data name="AddAccountTimeTitle.Text" xml:space="preserve">
+    <value>Time:</value>
+  </data>
+  <data name="AddAccountTitle.Text" xml:space="preserve">
+    <value>New Account</value>
+  </data>
+  <data name="AuthenticationAuthButton.Text" xml:space="preserve">
+    <value>Authenticate</value>
+  </data>
+  <data name="AuthenticationPageTitle.Text" xml:space="preserve">
+    <value>Authenticate - Protecc</value>
+  </data>
+  <data name="EditAccountPageTitle.Text" xml:space="preserve">
+    <value>Edit Account - Protecc</value>
+  </data>
+  <data name="EditAccountTitle.Text" xml:space="preserve">
+    <value>Edit Account</value>
+  </data>
+  <data name="ErrorHomeButton.Text" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="ErrorTitle.Text" xml:space="preserve">
+    <value>Protecc ran into an error</value>
+  </data>
+  <data name="MainAddButton.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="MainEnterKeyFlyout.Text" xml:space="preserve">
+    <value>Enter Key</value>
+  </data>
+  <data name="MainFromCameraFlyout.Text" xml:space="preserve">
+    <value>From Camera</value>
+  </data>
+  <data name="MainFromScreenFlyout.Text" xml:space="preserve">
+    <value>From Screen</value>
+  </data>
+  <data name="MainHiddenButton.Text" xml:space="preserve">
+    <value>Hidden</value>
+  </data>
+  <data name="MainScanQRFlyout.Text" xml:space="preserve">
+    <value>Scan QR</value>
+  </data>
+  <data name="MainVisibleButton.Text" xml:space="preserve">
+    <value>Visible</value>
+  </data>
+  <data name="MainYourAccountsTitle.Text" xml:space="preserve">
+    <value>Your Accounts</value>
+  </data>
+  <data name="NotificationCopyFailed.Text" xml:space="preserve">
+    <value>An error occurred while copying to clipboard.</value>
+  </data>
+  <data name="NotificationCopySucceed.Text" xml:space="preserve">
+    <value>Code copied to clipboard!</value>
+  </data>
+  <data name="OOBECard1Content.Text" xml:space="preserve">
+    <value>Thank you for downloading Protecc. After following this quick setup, you can begin using the app!</value>
+  </data>
+  <data name="OOBECard1ReleaseNotesButton.Content" xml:space="preserve">
+    <value>Release Notes</value>
+  </data>
+  <data name="OOBECard1Title.Text" xml:space="preserve">
+    <value>Welcome to Protecc!</value>
+  </data>
+  <data name="OOBECard2Title.Text" xml:space="preserve">
+    <value>Customize Settings</value>
+  </data>
+  <data name="OOBECard3Content.Text" xml:space="preserve">
+    <value>✓ Privacy Filter
+✓ Code Blurring
+✓ Auto blur on startup or unfocused
+✓ Open source</value>
+  </data>
+  <data name="OOBECard3GitHubButton.Content" xml:space="preserve">
+    <value>GitHub</value>
+  </data>
+  <data name="OOBECard3Title.Text" xml:space="preserve">
+    <value>Privacy</value>
+  </data>
+  <data name="OOBECard4StartButton.Text" xml:space="preserve">
+    <value>Start using Protecc</value>
+  </data>
+  <data name="OOBECard4Title.Text" xml:space="preserve">
+    <value>You're all set!</value>
+  </data>
+  <data name="OOBELoading.Text" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="OOBEPageTitle.Text" xml:space="preserve">
+    <value>Setup - Protecc</value>
+  </data>
+  <data name="OOBESkipButton.Text" xml:space="preserve">
+    <value>Skip</value>
+  </data>
+  <data name="OOBEStepperContent.Text" xml:space="preserve">
+    <value>Step {0}/4</value>
+  </data>
+  <data name="OOBEStepperTitle.Text" xml:space="preserve">
+    <value>Setup</value>
+  </data>
+  <data name="RatingsDescription.Text" xml:space="preserve">
+    <value>If you are enjoying the app please take a moment to rate it!</value>
+  </data>
+  <data name="RatingsPageTitle.Text" xml:space="preserve">
+    <value>Rate our App! - Protecc</value>
+  </data>
+  <data name="RatingsRateItButton.Text" xml:space="preserve">
+    <value>Rate it!</value>
+  </data>
+  <data name="RatingsTitle.Text" xml:space="preserve">
+    <value>Rate our App!🌟</value>
+  </data>
+  <data name="SettingsAboutTitle.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="SettingsBlurDescription.Text" xml:space="preserve">
+    <value>Blur codes when app is unfocused</value>
+  </data>
+  <data name="SettingsBlurTitle.Text" xml:space="preserve">
+    <value>Blur codes</value>
+  </data>
+  <data name="SettingsCaptureDescription.Text" xml:space="preserve">
+    <value>Toggle screen capturing app</value>
+  </data>
+  <data name="SettingsCaptureTitle.Text" xml:space="preserve">
+    <value>Screen capture</value>
+  </data>
+  <data name="SettingsCreditsTitle.Text" xml:space="preserve">
+    <value>Credits</value>
+  </data>
+  <data name="SettingsDeveloperTitle.Text" xml:space="preserve">
+    <value>Developer</value>
+  </data>
+  <data name="SettingsDiscordButton.Content" xml:space="preserve">
+    <value>Join</value>
+  </data>
+  <data name="SettingsDiscordDescription.Text" xml:space="preserve">
+    <value>Give feedback and get latest updates</value>
+  </data>
+  <data name="SettingsDiscordTitle.Text" xml:space="preserve">
+    <value>Protecc Discord</value>
+  </data>
+  <data name="SettingsExportButton.Content" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="SettingsExportDescription.Text" xml:space="preserve">
+    <value>Export keys as YAML</value>
+  </data>
+  <data name="SettingsExportTitle.Text" xml:space="preserve">
+    <value>Export keys</value>
+  </data>
+  <data name="SettingsFilterDescription.Text" xml:space="preserve">
+    <value>Shows the privacy filter by default</value>
+  </data>
+  <data name="SettingsFilterTitle.Text" xml:space="preserve">
+    <value>Show filter on launch</value>
+  </data>
+  <data name="SettingsGithubButton.Content" xml:space="preserve">
+    <value>GitHub Repo</value>
+  </data>
+  <data name="SettingsIconDesignerTitle.Text" xml:space="preserve">
+    <value>Icon designer</value>
+  </data>
+  <data name="SettingsLanguageButton.Content" xml:space="preserve">
+    <value>Reload App</value>
+  </data>
+  <data name="SettingsLanguageTitle.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="SettingsSpecialThanksTitle.Text" xml:space="preserve">
+    <value>Special Thanks</value>
+  </data>
+  <data name="SettingsTitle.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="SettingsTwitterButton.Content" xml:space="preserve">
+    <value>Follow</value>
+  </data>
+  <data name="SettingsTwitterDescription.Text" xml:space="preserve">
+    <value>Follow for latest updates</value>
+  </data>
+  <data name="SettingsTwitterTitle.Text" xml:space="preserve">
+    <value>FireCube Twitter</value>
+  </data>
+  <data name="SettingsViewOOBEButton.Content" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="SettingsViewOOBEDescription.Text" xml:space="preserve">
+    <value>Open the setup page</value>
+  </data>
+  <data name="SettingsViewOOBETitle.Text" xml:space="preserve">
+    <value>View OOBE</value>
+  </data>
+  <data name="SettingsWindowsHelloDescription.Text" xml:space="preserve">
+    <value>Require Windows Hello on launch</value>
+  </data>
+  <data name="SettingsWindowsHelloNotAvailable.Text" xml:space="preserve">
+    <value>*Windows Hello not setup</value>
+  </data>
+  <data name="SettingsWindowsHelloTitle.Text" xml:space="preserve">
+    <value>Windows Hello authentication</value>
+  </data>
+  <data name="WhatsNewPageTitle.Text" xml:space="preserve">
+    <value>What's new - Protecc</value>
+  </data>
+  <data name="WhatsNewTitle.Text" xml:space="preserve">
+    <value>What's new</value>
+  </data>
+</root>
