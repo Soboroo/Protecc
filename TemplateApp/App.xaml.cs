@@ -80,25 +80,35 @@ namespace Protecc
                     // configuring the new page by passing required information as a navigation
                     // parameter
                     SettingsClass Settings = new();
-                    ApplicationLanguages.PrimaryLanguageOverride = Settings.AppLanguage;
                     if (SystemInformation.Instance.IsFirstRun)
                     {
                         ApplicationData.Current.LocalSettings.Values["LaunchCount"] = 1;
                         Settings.Setup();
+                        ApplicationLanguages.PrimaryLanguageOverride = Settings.AppLanguage;
                         rootFrame.Navigate(typeof(OOBEPage), e.Arguments);
                     }
                     else if (SystemInformation.Instance.IsAppUpdated)
                     {
                         Settings.Update();
+                        ApplicationLanguages.PrimaryLanguageOverride = Settings.AppLanguage;
                         rootFrame.Navigate(typeof(WhatsNewPage), e.Arguments);
                     }
                     else if (new SettingsClass().LaunchCount == 4)
+                    {
+                        ApplicationLanguages.PrimaryLanguageOverride = Settings.AppLanguage;
                         rootFrame.Navigate(typeof(RatingsPage), e.Arguments);
+                    }
                     else if (new SettingsClass().WindowsHello)
+                    {
+                        ApplicationLanguages.PrimaryLanguageOverride = Settings.AppLanguage;
                         rootFrame.Navigate(typeof(WindowsHelloPage), e.Arguments);
+                    }
                     else
+                    {
+                        ApplicationLanguages.PrimaryLanguageOverride = Settings.AppLanguage;
                         rootFrame.Navigate(typeof(MainPage), e.Arguments);
-                        Settings.LaunchCount++;
+                    }
+                    Settings.LaunchCount++;
                     ApplicationView View = ApplicationView.GetForCurrentView();
                     View.IsScreenCaptureEnabled = Settings.CanRecord;
                 }
