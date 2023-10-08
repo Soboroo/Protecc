@@ -8,6 +8,11 @@
     mc:Ignorable="d"
     d:DesignHeight="300"
     d:DesignWidth="424">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="TextWrapping" Value="WrapWholeWords"/>
+        </Style>
+    </UserControl.Resources>
     <ScrollViewer VerticalScrollBarVisibility="Visible" VerticalScrollMode="Enabled">
         <StackPanel Padding="24, 20, 24, 20" Width="400">
             <Grid>
@@ -16,20 +21,20 @@
                     <TextBlock FontWeight="SemiBold" Margin="0, 12, 0, 4" FontSize="18">Protecc</TextBlock>
                     <TextBlock Opacity="0.7" Text="Version 1.2"/>
                 </StackPanel>
-                <Button x:Uid="SettingsGithubButton" Click="GitHub_Click" Width="120" Height="28" Padding="4, 2, 4, 2" HorizontalAlignment="Right" Content="GitHub Repo"/>
+                <Button x:Uid="SettingsGithubButton" Click="GitHub_Click" Width="Auto" MinWidth="120" Height="28" Padding="4, 2, 4, 2" HorizontalAlignment="Right" Content="GitHub Repo"/>
             </Grid>
             <MenuFlyoutSeparator Margin="0, 12, 0, 12"/>
             <Grid CornerRadius="4" Background="{ThemeResource LayerFillColorDefaultBrush}" Padding="8, 12, 8, 12" HorizontalAlignment="Stretch" BorderThickness="1" BorderBrush="{ThemeResource MicaBorderBrush}">
-                <StackPanel>
+                <StackPanel HorizontalAlignment="Left">
                     <TextBlock x:Uid="SettingsDiscordTitle" FontSize="18">Protecc Discord</TextBlock>
-                    <TextBlock x:Uid="SettingsDiscordDescription" Opacity="0.7" FontSize="12">Give feedback and get latest updates</TextBlock>
+                    <TextBlock x:Uid="SettingsDiscordDescription" Opacity="0.7" FontSize="12" MaxWidth="220">Give feedback and get latest updates</TextBlock>
                 </StackPanel>
                 <Button x:Uid="SettingsDiscordButton" Width="80" Click="Discord_Click" Style="{StaticResource AccentButtonStyle}" HorizontalAlignment="Right" VerticalAlignment="Center">Join</Button>
             </Grid>
             <Grid CornerRadius="4" Margin="0, 8, 0, 0" Background="{ThemeResource LayerFillColorDefaultBrush}" Padding="8, 12, 8, 12" HorizontalAlignment="Stretch" BorderThickness="1" BorderBrush="{ThemeResource MicaBorderBrush}">
-                <StackPanel>
+                <StackPanel HorizontalAlignment="Left">
                     <TextBlock x:Uid="SettingsTwitterTitle" FontSize="18">FireCube Twitter</TextBlock>
-                    <TextBlock x:Uid="SettingsTwitterDescription" Opacity="0.7" FontSize="12">Follow for latest updates</TextBlock>
+                    <TextBlock x:Uid="SettingsTwitterDescription" Opacity="0.7" FontSize="12" MaxWidth="220">Follow for latest updates</TextBlock>
                 </StackPanel>
                 <Button x:Uid="SettingsTwitterButton" Width="80" Click="Twitter_Click" Style="{StaticResource AccentButtonStyle}" HorizontalAlignment="Right" VerticalAlignment="Center">Follow</Button>
             </Grid>

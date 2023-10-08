@@ -120,7 +120,7 @@
   <data name="AccountGeneralColorTitle.Text" xml:space="preserve">
     <value>Color:</value>
   </data>
-  <data name="AccountGeneralNamePlaceholder.Text" xml:space="preserve">
+  <data name="AccountGeneralNamePlaceholder.PlaceholderText" xml:space="preserve">
     <value>Enter A name...</value>
   </data>
   <data name="AccountGeneralNameTitle.Text" xml:space="preserve">
