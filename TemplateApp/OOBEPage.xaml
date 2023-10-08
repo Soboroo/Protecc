@@ -85,7 +85,7 @@
                                                 <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
                                             </icons:FluentSymbolIcon.RenderTransform>
                                         </icons:FluentSymbolIcon>
-                                        <TextBlock x:Uid="OOBECard1Title" Text="Welcome to Protecc!" FontSize="32" Margin="0,0,0,12" FontWeight="SemiBold" CharacterSpacing="-20"/>
+                                        <TextBlock x:Uid="OOBECard1Title" Text="Welcome to Protecc!" FontSize="32" Margin="0,0,0,12" FontWeight="SemiBold" CharacterSpacing="-20" MaxWidth="500" TextWrapping="WrapWholeWords"/>
                                         <TextBlock x:Uid="OOBECard1Content" Opacity="0.70" LineHeight="24" Width="325" HorizontalAlignment="Left"
                             Text="Thank you for downloading Protecc. After following this quick setup, you can begin using the app!" TextWrapping="WrapWholeWords"/>
                                         <StackPanel Orientation="Horizontal" Margin="0,172,0,0" >
@@ -112,21 +112,21 @@
                                         <Grid Padding="12, 8, 12, 4" Background="{ThemeResource LayerFillColorDefaultBrush}" Margin="4, 8, 12, 8" CornerRadius="4" BorderThickness="1" BorderBrush="{ThemeResource MicaBorderBrush}">
                                             <StackPanel HorizontalAlignment="Left">
                                                 <TextBlock x:Uid="SettingsWindowsHelloTitle" Text="Windows Hello authentication" MaxWidth="220" FontWeight="SemiBold" Margin="0, 0, 0, 4"/>
-                                                <TextBlock x:Uid="SettingsWindowsHelloDescription" x:Name="WindowsHelloText" Text="Require Windows Hello on launch" MaxWidth="220" Opacity="0.7" />
+                                                <TextBlock x:Uid="SettingsWindowsHelloDescription" x:Name="WindowsHelloText" Text="Require Windows Hello on launch" MaxWidth="220" Opacity="0.7" TextWrapping="WrapWholeWords"/>
                                             </StackPanel>
                                             <ToggleSwitch x:Name="WindowsHelloSwitch"  IsOn="{x:Bind Settings.WindowsHello, Mode=TwoWay}" Margin="4, 4, -80, 4" Style="{ThemeResource GlowSwitch}" HorizontalAlignment="Right"/>
                                         </Grid>
                                         <Grid Padding="12, 4, 12, 4" Background="{ThemeResource LayerFillColorDefaultBrush}" Margin="4, 8, 12, 8" CornerRadius="4" BorderThickness="1" BorderBrush="{ThemeResource MicaBorderBrush}">
                                             <StackPanel HorizontalAlignment="Left">
                                                 <TextBlock x:Uid="SettingsBlurTitle" Text="Blur codes" MaxWidth="220" FontWeight="SemiBold" Margin="0, 0, 0, 4"/>
-                                                <TextBlock x:Uid="SettingsBlurDescription" Text="Blur codes when app is unfocused" MaxWidth="220" Opacity="0.7" />
+                                                <TextBlock x:Uid="SettingsBlurDescription" Text="Blur codes when app is unfocused" MaxWidth="220" Opacity="0.7" TextWrapping="WrapWholeWords"/>
                                             </StackPanel>
                                             <ToggleSwitch x:Name="FocusBlur" IsOn="{x:Bind Settings.FocusBlur, Mode=TwoWay}" Margin="4, 4, -80, 4" Style="{ThemeResource GlowSwitch}" HorizontalAlignment="Right"/>
                                         </Grid>
                                         <Grid Padding="12, 4, 12, 4" Background="{ThemeResource LayerFillColorDefaultBrush}" Margin="4, 8, 12, 8" CornerRadius="4" BorderThickness="1" BorderBrush="{ThemeResource MicaBorderBrush}">
                                             <StackPanel HorizontalAlignment="Left">
                                                 <TextBlock x:Uid="SettingsFilterTitle" Text="Show filter on launch" MaxWidth="220" FontWeight="SemiBold" Margin="0, 0, 0, 4"/>
-                                                <TextBlock x:Uid="SettingsFilterDescription" Text="Shows the privacy filter by default" MaxWidth="220" Opacity="0.7" />
+                                                <TextBlock x:Uid="SettingsFilterDescription" Text="Shows the privacy filter by default" MaxWidth="220" Opacity="0.7" TextWrapping="WrapWholeWords"/>
                                             </StackPanel>
                                             <ToggleSwitch x:Name="LaunchBlur" IsOn="{x:Bind Settings.LaunchBlur, Mode=TwoWay}" Margin="4, 4, -80, 4" Style="{ThemeResource GlowSwitch}" HorizontalAlignment="Right"/>
                                         </Grid>

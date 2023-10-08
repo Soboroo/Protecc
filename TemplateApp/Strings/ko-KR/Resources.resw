@@ -120,7 +120,7 @@
   <data name="AccountGeneralColorTitle.Text" xml:space="preserve">
     <value>색상:</value>
   </data>
-  <data name="AccountGeneralNamePlaceholder.Text" xml:space="preserve">
+  <data name="AccountGeneralNamePlaceholder.PlaceholderText" xml:space="preserve">
     <value>이름을 입력하세요...</value>
   </data>
   <data name="AccountGeneralNameTitle.Text" xml:space="preserve">
@@ -229,9 +229,6 @@
 ✓ 오픈소스</value>
   </data>
   <data name="OOBECard3GitHubButton.Content" xml:space="preserve">
-    <value>GitHub</value>
-  </data>
-  <data name="OOBECard3GitHubButton.Content1" xml:space="preserve">
     <value>GitHub</value>
   </data>
   <data name="OOBECard3Title.Text" xml:space="preserve">
