@@ -1,0 +1,5 @@
+files:
+  - source: /TemplateApp/Strings/en-US
+    translation: /TemplateApp/Strings/%locale%/Resources.resw
+  - source: /README.md
+    translation: /Readme/README_%language%.md
