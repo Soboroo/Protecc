@@ -37,9 +37,10 @@ namespace Protecc
 
         private async void Authenticate()
         {
+            var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
             Ring.Visibility = Visibility.Visible;
             AuthButton.Visibility = Visibility.Collapsed;
-            Title.Text = "Authenticating using Windows Hello...";
+            Title.Text = resourceLoader.GetString("WindowsHelloTitle/Text");
             Title.Foreground = AccentLinearGradientBrush;
             Content.Background = new SolidColorBrush(Colors.Transparent);
             Aurora.Visibility = Visibility.Visible;

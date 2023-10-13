@@ -363,4 +363,16 @@
   <data name="WhatsNewTitle.Text" xml:space="preserve">
     <value>What's new</value>
   </data>
+  <data name="WindowsHelloCancelled.Text" xml:space="preserve">
+    <value>Authentication cancelled</value>
+  </data>
+  <data name="WindowsHelloError.Text" xml:space="preserve">
+    <value>Something went wrong</value>
+  </data>
+  <data name="WindowsHelloTitle.Text" xml:space="preserve">
+    <value>Authenticating using Windows Hello...</value>
+  </data>
+  <data name="WindowsHelloUnknownError.Text" xml:space="preserve">
+    <value>Unknown Error occurred</value>
+  </data>
 </root>
