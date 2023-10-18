@@ -648,7 +648,7 @@
                             </Button.Flyout>
                         </Button>
                     </StackPanel>
-                   <!-- <controls:BackgroundSelectorControl x:Name="Backgrounds" SelectedIndex="0" Margin="8, 12, 0, 12"/>-->
+                    <!-- <controls:BackgroundSelectorControl x:Name="Backgrounds" SelectedIndex="0" Margin="8, 12, 0, 12"/>-->
                     <muxc:Expander HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Background="{ThemeResource LayerFillColorDefaultBrush}">
                         <muxc:Expander.Header>
                             <StackPanel Orientation="Horizontal">
@@ -659,6 +659,10 @@
                         <muxc:Expander.Content>
                             <Grid>
                                 <StackPanel>
+                                    <muxc:RadioButtons x:Name="OTPTypeOptions" MaxColumns="2" SelectedIndex="0" Margin="0, 0, 0, 16">
+                                        <RadioButton Style="{ThemeResource GlowRadio}" Content="TOTP"/>
+                                        <RadioButton Style="{ThemeResource GlowRadio}" Content="HOTP"/>
+                                    </muxc:RadioButtons>
                                     <Grid>
                                         <StackPanel HorizontalAlignment="Left">
                                             <TextBlock x:Uid="AddAccountTimeTitle" FontWeight="SemiBold">Time:</TextBlock>

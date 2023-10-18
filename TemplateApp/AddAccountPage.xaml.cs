@@ -71,7 +71,7 @@ namespace Protecc
                     Content.Opacity = 1;
                     return;
                 }
-                CredentialService.StoreNewCredential(NameBox.Text, KeyBox.Password, ColorPicker.Color, TimeOptions.SelectedIndex, DigitOptions.SelectedIndex, EncryptionMode.SelectedIndex);
+                CredentialService.StoreNewCredential(NameBox.Text, KeyBox.Password, ColorPicker.Color, TimeOptions.SelectedIndex, DigitOptions.SelectedIndex, EncryptionMode.SelectedIndex, OTPTypeOptions.SelectedIndex);
                 Frame rootFrame = Window.Current.Content as Frame;
                 rootFrame.Navigate(typeof(MainPage));
                 return;

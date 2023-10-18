@@ -24,6 +24,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using YamlDotNet.Core.Tokens;
 
 // The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
 
@@ -31,7 +32,7 @@ namespace Protecc.Controls
 {
     public sealed partial class AccountControl : UserControl
     {
-        private TOTPHelper TOTP;
+        private OTPHelper OTP;
         private bool WasChecked = false; //Used when Window deactivated to determine if filter was already on
 
         public VaultItem AccountVaultItem
@@ -40,7 +41,17 @@ namespace Protecc.Controls
             set
             {
                 SetValue(AccountVaultItemProperty, value);
-                TOTP = new TOTPHelper(AccountVaultItem);
+                OTP = new OTPHelper(AccountVaultItem);
+                if (DataHelper.OTPTypeId(AccountVaultItem.Resource) == 0)
+                {
+                    Progress.Visibility = Visibility.Visible;
+                    Generate.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    Progress.Visibility = Visibility.Collapsed;
+                    Generate.Visibility = Visibility.Visible;
+                }
             }
         }
         public static readonly DependencyProperty AccountVaultItemProperty =
@@ -89,7 +100,7 @@ namespace Protecc.Controls
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-            TOTP.Dispose();
+            OTP.Dispose();
             CredentialService.RemoveItem(AccountVaultItem);
         }
 
@@ -101,7 +112,7 @@ namespace Protecc.Controls
             {
                 DataPackage dataPackage = new DataPackage();
                 dataPackage.RequestedOperation = DataPackageOperation.Copy;
-                dataPackage.SetText(TOTP.Code.Replace(" ", ""));
+                dataPackage.SetText(OTP.Code.Replace(" ", ""));
                 Clipboard.SetContent(dataPackage);
                 CopyIcon.Symbol = Fluent.Icons.FluentSymbol.Checkmark20;
                 // Show notification
@@ -118,7 +129,7 @@ namespace Protecc.Controls
             CopyIcon.Symbol = Fluent.Icons.FluentSymbol.Copy20;
         }
 
-        private void Content_Unloaded(object sender, RoutedEventArgs e) => TOTP.Dispose();
+        private void Content_Unloaded(object sender, RoutedEventArgs e) => OTP.Dispose();
 
         private void Content_Loaded(object sender, RoutedEventArgs e) => Bindings.Update();
 
@@ -141,7 +152,7 @@ namespace Protecc.Controls
                 // Remove spaces and copy to clipboard
                 var content = new DataPackage();
                 content.RequestedOperation = DataPackageOperation.Copy;
-                content.SetText(TOTP.Code.Replace(" ", ""));
+                content.SetText(OTP.Code.Replace(" ", ""));
                 Clipboard.SetContent(content);
 
                 // Show notification
@@ -161,6 +172,11 @@ namespace Protecc.Controls
         {
             Frame rootFrame = Window.Current.Content as Frame;
             rootFrame.Navigate(typeof(EditAccountPage), AccountVaultItem);
+        }
+
+        private void Generate_Click(object sender, RoutedEventArgs e)
+        {
+            OTP.UpdateHOTP(AccountVaultItem);
         }
     }
 }

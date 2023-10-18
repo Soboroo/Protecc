@@ -17,24 +17,25 @@ using OtpNet;
 
 namespace Protecc.Services
 {
-    ///     Credentials are stored with three parameters. Name, Key and Resource
+    ///     Credentials are stored with four parameters. Name, Key and Resource
     ///     The Name contains the account name
     ///     The Key contains the 2FA key string
-    ///     The resource contains a 8 digit identifier string with format: 
+    ///     The resource contains a 9 digit identifier string with format: 
     ///     #Color in HEX format, Time in seconds (max 2 digits), Number of code digits (max 1 digit), Index representing encryptionmode enum
     ///     Encryption enums: 0 = Sha1, 1 = Sha256, 2 = Sha512
-    ///     Example: Color white, 30 seconds, 6 digits, Sha512 will be FFFFFF3062
-    ///     Example: Color black, 60 seconds, 8 digits, Sha1 will be 0000006080
-    ///     Full Example: Name "Twitter", Color blue, 30 seconds, 6 digits, Sha1 will be "Twitter0000ff3060"
+    ///     OTP type: 0 = TOTP, 1 = HOTP
+    ///     Example: Color white, 30 seconds, 6 digits, Sha512, TOTP will be FFFFFF30620
+    ///     Example: Color black, 60 seconds, 8 digits, Sha1, HOTP will be 00000060801
+    ///     Full Example: Name "Twitter", Color blue, 30 seconds, 6 digits, Sha1, TOTP will be "Twitter0000ff30600"
 
     public class CredentialService
     {
         private static PasswordVault Vault = new PasswordVault();
         public static ObservableCollection<VaultItem> CredentialList = new ObservableCollection<VaultItem>();
 
-        protected internal static void StoreNewCredential(string Name, string Key, Color Color, int TimeIndex, int DigitsIndex, int Encryptionindex)
+        protected internal static void StoreNewCredential(string Name, string Key, Color Color, int TimeIndex, int DigitsIndex, int Encryptionindex, int OTPTypeIndex)
         {
-            string Resource = DataHelper.Encode(Color, TimeIndex, DigitsIndex, Encryptionindex);
+            string Resource = DataHelper.Encode(Color, TimeIndex, DigitsIndex, Encryptionindex, OTPTypeIndex);
             Vault.Add(new PasswordCredential(Resource, Name, Key));
             CredentialList.Add(new VaultItem(Name, Resource));
         }
@@ -59,12 +60,24 @@ namespace Protecc.Services
                 newColor, 
                 DataHelper.DecodeTime(vaultItem.Resource),
                 DataHelper.DecodeDigits(vaultItem.Resource),
-                DataHelper.DecodeEncryptionId(vaultItem.Resource)
+                DataHelper.DecodeEncryptionId(vaultItem.Resource),
+                DataHelper.OTPTypeId(vaultItem.Resource),
+                DataHelper.Counter(vaultItem.Resource)
                 );
 
             //Save to credential vault and add to UI
             Vault.Add(new PasswordCredential(Resource, newName, password));
             CredentialList.Add(new VaultItem(newName, Resource));
+        }
+
+        protected internal static void CounterIncrement(VaultItem vaultItem)
+        {
+            var password = Vault.Retrieve(vaultItem.Resource, vaultItem.Name).Password;
+            Vault.Remove(Vault.Retrieve(vaultItem.Resource, vaultItem.Name));
+            CredentialList.Remove(vaultItem);
+            string Resource = DataHelper.CounterIncrement(vaultItem.Resource);
+            Vault.Add(new PasswordCredential(Resource, vaultItem.Name, password));
+            CredentialList.Add(new VaultItem(vaultItem.Name, Resource));
         }
 
         protected internal static byte[] GetKey(VaultItem vaultItem)

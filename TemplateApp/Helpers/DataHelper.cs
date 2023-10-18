@@ -1,14 +1,16 @@
 ﻿using OtpNet;
+using Protecc.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.UI;
 using Windows.UI.Xaml.Media;
 
 namespace Protecc.Helpers
-{ 
+{
     ///     Credentials are stored with three parameters. Name, Key and Resource
     ///     The Name contains the account name
     ///     The Key contains the 2FA key string
@@ -21,12 +23,11 @@ namespace Protecc.Helpers
 
     public class DataHelper
     {
-        public static string Encode(Color color, int TimeIndex, int DigitsIndex, int Encryptionindex) => color.ToString().Remove(0, 3) + (TimeIndex == 0 ? 30 : 60) + (DigitsIndex == 0 ? 6 : 8) + Encryptionindex;
+        public static string Encode(Color color, int TimeIndex, int DigitsIndex, int EncryptionIndex, int OTPTypeIndex) => color.ToString().Remove(0, 3) + (TimeIndex == 0 ? 30 : 60) + (DigitsIndex == 0 ? 6 : 8) + EncryptionIndex + OTPTypeIndex + "0"; // "0" for counter;
 
         public static SolidColorBrush DecodeColor(string Resource) => ColorUIHelper.HexToBrush(Resource.Substring(0, 6));
 
         public static int DecodeTime(string Resource) => Int32.Parse(Resource.Substring(6, 2));
-
         public static int DecodeDigits(string Resource) => Int32.Parse(Resource.Substring(8, 1));
 
         public static OtpHashMode DecodeEncryption(string Resource)
@@ -39,11 +40,36 @@ namespace Protecc.Helpers
                 return OtpHashMode.Sha512;
         }
 
+        public static int OTPTypeId(string Resource) {
+            try
+            {
+                return Int32.Parse(Resource.Substring(10, 1));
+            } catch (Exception)
+            {
+                return 0;
+            }
+        }
+
+        public static int Counter(string Resource)
+        {
+            if (OTPTypeId(Resource) == 0)
+                throw new Exception("OTP is not HOTP");
+            else
+                return Int32.Parse(Resource.Substring(11));
+        }
+
         public static int DecodeEncryptionId(string Resource) => Int32.Parse(Resource.Substring(9, 1));
         /// <summary>
         /// Encodes string using previously decoded values
         /// </summary>
-        public static string EncodeEdited(Color color, int savedTime, int savedDigits, int savedEncryptionIndex) => color.ToString().Remove(0, 3) + savedTime + savedDigits + savedEncryptionIndex;
+        public static string EncodeEdited(Color color, int savedTime, int savedDigits, int savedEncryptionIndex, int savedOTPTypeIndex, int savedCounter) => color.ToString().Remove(0, 3) + savedTime + savedDigits + savedEncryptionIndex + savedOTPTypeIndex + savedCounter;
+        public static string CounterIncrement(string Resource)
+        {
+            if (OTPTypeId(Resource) == 0)
+                throw new Exception("OTP is not HOTP");
+            else
+                return Resource.Substring(0, 11) + (Int32.Parse(Resource.Substring(11)) + 1);
+        }
 
     }
 }
