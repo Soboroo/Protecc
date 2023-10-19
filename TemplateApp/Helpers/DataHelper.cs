@@ -18,9 +18,10 @@ namespace Protecc.Helpers
     ///     The resource contains a 8 digit identifier string with format: 
     ///     #Color in HEX format, Time in seconds (max 2 digits), Number of code digits (max 1 digit), Index representing encryptionmode enum
     ///     Encryption enums: 0 = Sha1, 1 = Sha256, 2 = Sha512
-    ///     Example: Color white, 30 seconds, 6 digits, Sha512 will be FFFFFF3062
-    ///     Example: Color black, 60 seconds, 8 digits, Sha1 will be 0000006080
-    ///     Example: Color blue, 30 seconds, 6 digits, Sha1 will be "0000ff3060"
+    ///     OTP type: 0 = TOTP, 1 = HOTP; In HOTP case, the time will be ignored;
+    ///     Example: Color white, 30 seconds, 6 digits, Sha512, TOTP will be FFFFFF30620
+    ///     Example: Color black, 60 seconds, 8 digits, Sha1, HOTP will be 00000060801
+    ///     Example: Color blue, 30 seconds, 6 digits, Sha1, HOTP will be "0000ff30601"
 
     public class DataHelper
     {

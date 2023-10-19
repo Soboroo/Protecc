@@ -18,13 +18,13 @@ using Windows.Storage;
 
 namespace Protecc.Services
 {
-    ///     Credentials are stored with four parameters. Name, Key and Resource
+    ///     Credentials are stored with three parameters. Name, Key and Resource
     ///     The Name contains the account name
     ///     The Key contains the 2FA key string
     ///     The resource contains a 9 digit identifier string with format: 
     ///     #Color in HEX format, Time in seconds (max 2 digits), Number of code digits (max 1 digit), Index representing encryptionmode enum
     ///     Encryption enums: 0 = Sha1, 1 = Sha256, 2 = Sha512
-    ///     OTP type: 0 = TOTP, 1 = HOTP
+    ///     OTP type: 0 = TOTP, 1 = HOTP; In HOTP case, the time will be ignored
     ///     Example: Color white, 30 seconds, 6 digits, Sha512, TOTP will be FFFFFF30620
     ///     Example: Color black, 60 seconds, 8 digits, Sha1, HOTP will be 00000060801
     ///     Full Example: Name "Twitter", Color blue, 30 seconds, 6 digits, Sha1, TOTP will be "Twitter0000ff30600"
