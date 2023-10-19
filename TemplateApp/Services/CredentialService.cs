@@ -14,6 +14,7 @@ using Windows.Storage.Streams;
 using Protecc.Helpers;
 using System.Diagnostics;
 using OtpNet;
+using Windows.Storage;
 
 namespace Protecc.Services
 {
@@ -38,6 +39,21 @@ namespace Protecc.Services
             string Resource = DataHelper.Encode(Color, TimeIndex, DigitsIndex, Encryptionindex, OTPTypeIndex);
             Vault.Add(new PasswordCredential(Resource, Name, Key));
             CredentialList.Add(new VaultItem(Name, Resource));
+
+            ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
+            StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+
+            // Setting in a container
+            ApplicationDataContainer container = localSettings.CreateContainer("OTPResourceContainer", ApplicationDataCreateDisposition.Always);
+
+            if (localSettings.Containers.ContainsKey("OTPResourceContainer"))
+            {
+                ApplicationDataCompositeValue composite = new ApplicationDataCompositeValue();
+                composite["Name"] = Name;
+                composite["Counter"] = 0;
+
+                localSettings.Containers["OTPResourceContainer"].Values[Name] = composite;
+            }
         }
 
         /// <summary>
@@ -49,11 +65,14 @@ namespace Protecc.Services
         protected internal static void EditCredential(VaultItem vaultItem, string newName, Color newColor)
         {
             // Retrieve required data
+            ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
             var password = Vault.Retrieve(vaultItem.Resource, vaultItem.Name).Password;
+            ApplicationDataCompositeValue resource = (ApplicationDataCompositeValue)localSettings.Containers["OTPResourceContainer"].Values[vaultItem.Name];
 
             // Remove old item from vault and from UI
             Vault.Remove(Vault.Retrieve(vaultItem.Resource, vaultItem.Name));
             CredentialList.Remove(vaultItem);
+            localSettings.Values.Remove(vaultItem.Name);
 
             // Create a new item and copy old properties
             string Resource = DataHelper.EncodeEdited(
@@ -64,20 +83,28 @@ namespace Protecc.Services
                 DataHelper.OTPTypeId(vaultItem.Resource),
                 DataHelper.Counter(vaultItem.Resource)
                 );
+            resource["Name"] = newName;
 
             //Save to credential vault and add to UI
             Vault.Add(new PasswordCredential(Resource, newName, password));
             CredentialList.Add(new VaultItem(newName, Resource));
+            localSettings.Containers["OTPResourceContainer"].Values[newName] = resource;
         }
 
         protected internal static void CounterIncrement(VaultItem vaultItem)
         {
-            var password = Vault.Retrieve(vaultItem.Resource, vaultItem.Name).Password;
-            Vault.Remove(Vault.Retrieve(vaultItem.Resource, vaultItem.Name));
-            CredentialList.Remove(vaultItem);
-            string Resource = DataHelper.CounterIncrement(vaultItem.Resource);
-            Vault.Add(new PasswordCredential(Resource, vaultItem.Name, password));
-            CredentialList.Add(new VaultItem(vaultItem.Name, Resource));
+            ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
+            StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+
+            // Setting in a container
+            ApplicationDataContainer container = localSettings.CreateContainer("OTPResourceContainer", ApplicationDataCreateDisposition.Always);
+
+            if (localSettings.Containers.ContainsKey("OTPResourceContainer"))
+            {
+                ApplicationDataCompositeValue resource = (ApplicationDataCompositeValue)localSettings.Containers["OTPResourceContainer"].Values[vaultItem.Name];
+                resource["Counter"] = (int)resource["Counter"] + 1;
+                localSettings.Containers["OTPResourceContainer"].Values[vaultItem.Name] = resource;
+            }
         }
 
         protected internal static byte[] GetKey(VaultItem vaultItem)
@@ -89,8 +116,10 @@ namespace Protecc.Services
 
         protected internal static void RemoveItem(VaultItem vaultItem)
         {
+            ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
             Vault.Remove(Vault.Retrieve(vaultItem.Resource, vaultItem.Name));
             CredentialList.Remove(vaultItem);
+            localSettings.Values.Remove(vaultItem.Name);
         }
 
         protected internal async static Task RefreshListAsync()

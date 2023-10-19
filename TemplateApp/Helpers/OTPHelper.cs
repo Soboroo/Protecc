@@ -18,6 +18,7 @@ using Windows.System.Threading;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.Storage;
 using FX = TextBlockFX.Win2D.UWP;
 using ProgressRing = Microsoft.UI.Xaml.Controls.ProgressRing;
 
@@ -71,6 +72,12 @@ namespace Protecc.Helpers
         {
             try
             {
+                ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
+                StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+
+                // Setting in a container
+                ApplicationDataContainer container = localSettings.CreateContainer("OTPResourceContainer", ApplicationDataCreateDisposition.Always);
+
                 Time = DataHelper.DecodeTime(vault.Resource);
                 Maximum = Time;
                 Digits = DataHelper.DecodeDigits(vault.Resource);
@@ -84,7 +91,7 @@ namespace Protecc.Helpers
                 else if (OTPType == 1)
                 {
                     OTP = new Hotp(CredentialService.GetKey(vault), hotpSize: Digits);
-                    Counter = DataHelper.Counter(vault.Resource);
+                    Counter = DataHelper.Counter(vault.Name);
                     Code = FormatCode(((Hotp)OTP).ComputeHOTP(Counter)); // TODO: Add counter to vault
                 }
                 PeriodicTimer = ThreadPoolTimer.CreatePeriodicTimer(TimerElapsed, TimeSpan.FromMilliseconds(1000));

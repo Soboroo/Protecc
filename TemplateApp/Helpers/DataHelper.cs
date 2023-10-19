@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Storage;
 using Windows.UI;
 using Windows.UI.Xaml.Media;
 
@@ -23,7 +24,7 @@ namespace Protecc.Helpers
 
     public class DataHelper
     {
-        public static string Encode(Color color, int TimeIndex, int DigitsIndex, int EncryptionIndex, int OTPTypeIndex) => color.ToString().Remove(0, 3) + (TimeIndex == 0 ? 30 : 60) + (DigitsIndex == 0 ? 6 : 8) + EncryptionIndex + OTPTypeIndex + "0"; // "0" for counter;
+        public static string Encode(Color color, int TimeIndex, int DigitsIndex, int EncryptionIndex, int OTPTypeIndex) => color.ToString().Remove(0, 3) + (TimeIndex == 0 ? 30 : 60) + (DigitsIndex == 0 ? 6 : 8) + EncryptionIndex + OTPTypeIndex;
 
         public static SolidColorBrush DecodeColor(string Resource) => ColorUIHelper.HexToBrush(Resource.Substring(0, 6));
 
@@ -40,22 +41,46 @@ namespace Protecc.Helpers
                 return OtpHashMode.Sha512;
         }
 
-        public static int OTPTypeId(string Resource) {
+        public static int OTPTypeId(string Resource)
+        {
             try
             {
                 return Int32.Parse(Resource.Substring(10, 1));
-            } catch (Exception)
+            }
+            catch (Exception)
             {
                 return 0;
             }
         }
 
-        public static int Counter(string Resource)
+        public static int Counter(string Name)
         {
-            if (OTPTypeId(Resource) == 0)
-                throw new Exception("OTP is not HOTP");
+            ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
+            StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+
+            // Setting in a container
+            ApplicationDataContainer container = localSettings.CreateContainer("OTPResourceContainer", ApplicationDataCreateDisposition.Always);
+
+            if (localSettings.Containers.ContainsKey("OTPResourceContainer"))
+            {
+                ApplicationDataCompositeValue resource = (ApplicationDataCompositeValue)localSettings.Containers["OTPResourceContainer"].Values[Name];
+                try
+                {
+                    return (int)resource["Counter"];
+                }
+                catch
+                {
+                    resource = new ApplicationDataCompositeValue();
+                    resource["Name"] = Name;
+                    resource["Counter"] = 0;
+                    localSettings.Containers["OTPResourceContainer"].Values[Name] = resource;
+                    return 0;
+                }
+            }
             else
-                return Int32.Parse(Resource.Substring(11));
+            {
+                throw new Exception("OTPResourceContainer does not exist");
+            }
         }
 
         public static int DecodeEncryptionId(string Resource) => Int32.Parse(Resource.Substring(9, 1));
