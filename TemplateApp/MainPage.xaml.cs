@@ -106,11 +106,11 @@ namespace Protecc
                     AccountsView.Visibility = Visibility.Visible;
                     CapturingText.Visibility = Visibility.Collapsed;
                     await ApplicationView.GetForCurrentView().TryEnterViewModeAsync(ApplicationViewMode.Default);
-                    Create(await TOTPUriHelper.GetFromClipboard());
+                    Create(await OTPUriHelper.GetFromClipboard());
                 }
             }
         }
-        public async void Create(TOTPClass OTP)
+        public async void Create(OTPClass OTP)
         {
             Frame rootFrame = Window.Current.Content as Frame;
             try

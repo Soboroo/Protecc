@@ -88,14 +88,6 @@ namespace Protecc.Helpers
         /// <summary>
         /// Encodes string using previously decoded values
         /// </summary>
-        public static string EncodeEdited(Color color, int savedTime, int savedDigits, int savedEncryptionIndex, int savedOTPTypeIndex, int savedCounter) => color.ToString().Remove(0, 3) + savedTime + savedDigits + savedEncryptionIndex + savedOTPTypeIndex + savedCounter;
-        public static string CounterIncrement(string Resource)
-        {
-            if (OTPTypeId(Resource) == 0)
-                throw new Exception("OTP is not HOTP");
-            else
-                return Resource.Substring(0, 11) + (Int32.Parse(Resource.Substring(11)) + 1);
-        }
-
+        public static string EncodeEdited(Color color, int savedTime, int savedDigits, int savedEncryptionIndex, int savedOTPTypeIndex) => color.ToString().Remove(0, 3) + savedTime + savedDigits + savedEncryptionIndex + savedOTPTypeIndex;
     }
 }

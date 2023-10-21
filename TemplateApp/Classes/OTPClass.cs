@@ -7,20 +7,23 @@ using System.Threading.Tasks;
 
 namespace Protecc.Classes
 {
-    public class TOTPClass
+    public class OTPClass
     {
+        private readonly OTPType _Type;
         private readonly string _Secret;
         private readonly string _Account;
         private readonly string _Issuer;
         private readonly AlgorithmOption _Algorithm = AlgorithmOption.SHA1;
         private readonly int _Digits = 6;
         private readonly int _Period = 30;
-        public TOTPClass(string uriString)
+        private readonly int _Counter = 0;
+        public OTPClass(string uriString)
         {
             try
             {
                 Uri uri = new(uriString);
-                if (uri.Host != "totp") throw new Exception("This URI is not totp format");
+                if (uri.Host != "totp" && uri.Host != "hotp") throw new Exception("This URI is not otp format");
+                _Type = uri.Host == "totp" ? OTPType.TOTP : OTPType.HOTP;
                 string[] label = uri.Segments[1].Split(':');
                 if (label.Length == 2)
                 {
@@ -35,22 +38,26 @@ namespace Protecc.Classes
                 _Secret = queryDictionary["secret"] ?? _Secret;
                 _Algorithm = (AlgorithmOption)Enum.Parse(typeof(AlgorithmOption), queryDictionary["algorithm"] ?? "SHA1");
                 _Digits = queryDictionary["digits"] == "8" ? 8 : 6;
-                _Period = queryDictionary["period"] == "60" ? 60 : 30;
                 _Issuer = queryDictionary["issuer"];
+                if (uri.Host == "hotp") _Counter = int.Parse(queryDictionary["counter"] ?? "0");
+                else _Period = queryDictionary["period"] == "60" ? 60 : 30;
             }
             catch { }
         }
 
-        public TOTPClass(string secret, string account, string issuer, string algorithm, int digits, int period)
+        public OTPClass(OTPType type, string secret, string account, string issuer, string algorithm, int digits, int periodOrCounter)
         {
+            _Type = type;
             _Secret = secret;
             _Account = account;
             _Issuer = issuer;
             _Algorithm = (AlgorithmOption)Enum.Parse(typeof(AlgorithmOption), algorithm ?? "SHA1");
             _Digits = digits == 8 ? 8 : 6;
-            _Period = period == 60 ? 60 : 30;
+            if (type == OTPType.HOTP) _Counter = periodOrCounter;
+            else _Period = periodOrCounter == 60 ? 60 : 30;
         }
 
+        public OTPType Type { get { return _Type; } }
         public string Secret { get { return _Secret; } }
         public string Account { get { return _Account; } }
         public string Issuer { get { return _Issuer; } }
@@ -63,5 +70,10 @@ namespace Protecc.Classes
         SHA1,
         SHA256,
         SHA512
+    }
+    public enum OTPType
+    {
+        TOTP,
+        HOTP
     }
 }

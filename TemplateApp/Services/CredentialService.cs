@@ -80,8 +80,7 @@ namespace Protecc.Services
                 DataHelper.DecodeTime(vaultItem.Resource),
                 DataHelper.DecodeDigits(vaultItem.Resource),
                 DataHelper.DecodeEncryptionId(vaultItem.Resource),
-                DataHelper.OTPTypeId(vaultItem.Resource),
-                DataHelper.Counter(vaultItem.Resource)
+                DataHelper.OTPTypeId(vaultItem.Resource)
                 );
             resource["Name"] = newName;
 

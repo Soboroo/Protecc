@@ -19,8 +19,8 @@
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
-    <PackageCertificateThumbprint>00E95C3FAD42BD7746B10B1BEFB33D44991CE752</PackageCertificateThumbprint>
-    <PackageCertificateKeyFile />
+    <PackageCertificateThumbprint>843AB90734D5A820BB7927F0CFBA82BCBC2DC682</PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>Protecc_TemporaryKey.pfx</PackageCertificateKeyFile>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
@@ -134,7 +134,7 @@
     </Compile>
     <Compile Include="Classes\Account.cs" />
     <Compile Include="Classes\SettingsClass.cs" />
-    <Compile Include="Classes\TOTPClass.cs" />
+    <Compile Include="Classes\OTPClass.cs" />
     <Compile Include="Classes\VaultItem.cs" />
     <Compile Include="Controls\AccountControl.xaml.cs">
       <DependentUpon>AccountControl.xaml</DependentUpon>
@@ -152,8 +152,7 @@
     <Compile Include="Helpers\DataHelper.cs" />
     <Compile Include="Helpers\ExportHelper.cs" />
     <Compile Include="Helpers\OTPHelper.cs" />
-    <Compile Include="Helpers\TOTPHelper.cs" />
-    <Compile Include="Helpers\TOTPUriHelper.cs" />
+    <Compile Include="Helpers\OTPUriHelper.cs" />
     <Compile Include="OOBEPage.xaml.cs">
       <DependentUpon>OOBEPage.xaml</DependentUpon>
     </Compile>
@@ -238,6 +237,7 @@
     <Content Include="Assets\Square44x44Logo.scale-200.png" />
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <None Include="Protecc_TemporaryKey.pfx" />
     <PRIResource Include="Strings\en-US\Resources.resw" />
     <PRIResource Include="Strings\ko-KR\Resources.resw" />
   </ItemGroup>

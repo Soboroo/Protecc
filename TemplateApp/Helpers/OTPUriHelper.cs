@@ -11,9 +11,9 @@ using ZXing;
 
 namespace Protecc.Helpers
 {
-    public class TOTPUriHelper
+    public class OTPUriHelper
     {
-        public static async Task<TOTPClass> GetFromClipboard()
+        public static async Task<OTPClass> GetFromClipboard()
         {
             string res = null;
             try
@@ -45,7 +45,7 @@ namespace Protecc.Helpers
                 }
             }
             catch { }
-            return new TOTPClass(res);
+            return new OTPClass(res);
         }
 
         public static string DecodeBitmap(SoftwareBitmap bitmap)

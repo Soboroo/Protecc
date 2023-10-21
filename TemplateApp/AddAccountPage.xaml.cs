@@ -95,14 +95,15 @@ namespace Protecc
             {
                 KeyBox.Password = e.Parameter as string;
             }
-            else if (e.Parameter.GetType() == typeof(TOTPClass))
+            else if (e.Parameter.GetType() == typeof(OTPClass))
             {
-                TOTPClass OTP = e.Parameter as TOTPClass;
+                OTPClass OTP = e.Parameter as OTPClass;
                 NameBox.Text = OTP.Issuer ?? OTP.Account;
                 KeyBox.Password = OTP.Secret;
                 EncryptionMode.SelectedIndex = (int)OTP.Algorithm;
                 DigitOptions.SelectedIndex = OTP.Digits == 6 ? 0 : 1;
                 TimeOptions.SelectedIndex = OTP.Period == 30 ? 0 : 1;
+                OTPTypeOptions.SelectedIndex = OTP.Type == OTPType.TOTP ? 0 : 1;
             }
         }
     }
