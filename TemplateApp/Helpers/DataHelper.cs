@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Windows.Storage;
 using Windows.UI;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace Protecc.Helpers
 {
@@ -81,6 +82,24 @@ namespace Protecc.Helpers
             else
             {
                 throw new Exception("OTPResourceContainer does not exist");
+            }
+        }
+
+        public static ImageSource AccountIcon(string Name)
+        {
+            try
+            {
+                StorageFolder localFolder = ApplicationData.Current.LocalFolder;
+                BitmapImage res = new(new Uri(localFolder.Path + "\\" + Name + ".png"))
+                {
+                    CreateOptions = BitmapCreateOptions.IgnoreImageCache
+                };
+                return res;
+            }
+            catch (Exception)
+            {
+                // No image
+                return null;
             }
         }
 

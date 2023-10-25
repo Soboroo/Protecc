@@ -603,6 +603,10 @@
                 <Button Click="Close_Click" Margin="0, 12, 8, 0" Style="{ThemeResource CloseButton}" HorizontalAlignment="Right" VerticalAlignment="Top" Canvas.ZIndex="3"/>
                 <StackPanel x:Name="Content" HorizontalAlignment="center" VerticalAlignment="Center" Padding="16">
                     <TextBlock x:Uid="AddAccountTitle" FontSize="24" FontWeight="SemiBold" Margin="0, 0, 0, 12" Foreground="{ThemeResource AccentLinearGradientBrush}">New Account</TextBlock>
+                    <StackPanel>
+                        <PersonPicture x:Name="Profile"/>
+                        <Button x:Name="PictureButton" Content="Select Picture" Click="PictureButton_Click"/>
+                    </StackPanel>
                     <TextBlock x:Uid="AccountGeneralNameTitle" FontWeight="SemiBold">Name:</TextBlock>
                     <toolkit:DropShadowPanel ShadowOpacity="0.4" OffsetX="4" CornerRadius="8" Margin="0, 12, 0, 16" OffsetY="4">
                         <TextBox x:Uid="AccountGeneralNamePlaceholder" x:Name="NameBox" Height="20" Width="340" PlaceholderText="Enter a name..." Style="{ThemeResource KeyGlowTextBox}">

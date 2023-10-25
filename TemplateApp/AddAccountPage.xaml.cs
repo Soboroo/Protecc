@@ -21,6 +21,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.Storage;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -31,6 +32,8 @@ namespace Protecc
     /// </summary>
     public sealed partial class AddAccountPage : Page
     {
+        StorageFile _imageFile;
+
         public AddAccountPage()
         {
             this.InitializeComponent();
@@ -71,7 +74,7 @@ namespace Protecc
                     Content.Opacity = 1;
                     return;
                 }
-                CredentialService.StoreNewCredential(NameBox.Text, KeyBox.Password, ColorPicker.Color, TimeOptions.SelectedIndex, DigitOptions.SelectedIndex, EncryptionMode.SelectedIndex, OTPTypeOptions.SelectedIndex);
+                CredentialService.StoreNewCredential(NameBox.Text, KeyBox.Password, ColorPicker.Color, TimeOptions.SelectedIndex, DigitOptions.SelectedIndex, EncryptionMode.SelectedIndex, OTPTypeOptions.SelectedIndex, _imageFile);
                 Frame rootFrame = Window.Current.Content as Frame;
                 rootFrame.Navigate(typeof(MainPage));
                 return;
@@ -104,6 +107,30 @@ namespace Protecc
                 DigitOptions.SelectedIndex = OTP.Digits == 6 ? 0 : 1;
                 TimeOptions.SelectedIndex = OTP.Period == 30 ? 0 : 1;
                 OTPTypeOptions.SelectedIndex = OTP.Type == OTPType.TOTP ? 0 : 1;
+            }
+        }
+
+        private async void PictureButton_Click(object sender, RoutedEventArgs e)
+        {
+            var picker = new Windows.Storage.Pickers.FileOpenPicker();
+            picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
+            picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
+            picker.FileTypeFilter.Add(".jpg");
+            picker.FileTypeFilter.Add(".jpeg");
+            picker.FileTypeFilter.Add(".png");
+
+            _imageFile = await picker.PickSingleFileAsync();
+            if (_imageFile != null)
+            {
+                Windows.Storage.AccessCache.StorageApplicationPermissions.FutureAccessList.Add(_imageFile);
+                var stream = await _imageFile.OpenAsync(FileAccessMode.Read);
+                var bitmapImage = new Windows.UI.Xaml.Media.Imaging.BitmapImage();
+                await bitmapImage.SetSourceAsync(stream);
+                Profile.ProfilePicture = bitmapImage;
+            }
+            else
+            {
+                // Operation cancelled
             }
         }
     }

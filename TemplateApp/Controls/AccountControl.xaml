@@ -17,10 +17,16 @@
     xmlns:behaviors="using:Microsoft.Toolkit.Uwp.UI.Behaviors"
     xmlns:ui="using:Microsoft.Toolkit.Uwp.UI"
     mc:Ignorable="d">
-    <StackPanel Width="300" Loaded="Content_Loaded" Unloaded="Content_Unloaded" DoubleTapped="Content_DoubleTapped">
+    <StackPanel Width="380" Loaded="Content_Loaded" Unloaded="Content_Unloaded" DoubleTapped="Content_DoubleTapped" >
         <Grid CornerRadius="8" Padding="12, 12, 12, 0" Margin="0, 0, 0, 8" Height="80" BorderThickness="1" Canvas.ZIndex="3">
-            <TextBlock MaxWidth="210" Opacity="0.7" TextTrimming="CharacterEllipsis" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1" Text="{x:Bind AccountVaultItem.Name, Mode=OneWay}"/>
-            <Grid HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="200" Height="80" Margin="0, 0, 0, -20" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <PersonPicture x:Name="AccountIcon" Width="60" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0"/>
+            <TextBlock Grid.Column="1" MaxWidth="210" Opacity="0.7" TextTrimming="CharacterEllipsis" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1" Text="{x:Bind AccountVaultItem.Name, Mode=OneWay}"/>
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="200" Height="80" Margin="0, 0, 0, -20" Grid.Column="1">
                 <tbfx:TextBlockFX x:Name="AnimatedCodeBlock" Canvas.ZIndex="2" x:Load="True" Loaded="CodeBlock_Loaded" Text="{x:Bind OTP.Code, Mode=OneWay}" Foreground="{ThemeResource HvidSortBrush}" FontSize="32" FontWeight="SemiBold">
                     <tbfx:TextBlockFX.TextEffect>
                         <effects:MotionBlur />
@@ -45,8 +51,8 @@
                     </interactivity:Interaction.Behaviors>
                 </Grid>
             </Grid>
-            <muxc:ProgressRing x:Name="Progress" Value="{x:Bind OTP.TimeRemaining, Mode=OneWay}" Maximum="{x:Bind OTP.Maximum, Mode=OneWay}" Foreground="{x:Bind Helpers:DataHelper.DecodeColor(AccountVaultItem.Resource), Mode=OneWay}" IsIndeterminate="False" VerticalAlignment="Center" HorizontalAlignment="Right" Minimum="0" Height="60" Width="60"/>
-            <Button x:Name="Generate" Content="Generate" Click="Generate_Click" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Right" Height="60" Width="60"/>
+            <muxc:ProgressRing x:Name="Progress" Grid.Column="2" Value="{x:Bind OTP.TimeRemaining, Mode=OneWay}" Maximum="{x:Bind OTP.Maximum, Mode=OneWay}" Foreground="{x:Bind Helpers:DataHelper.DecodeColor(AccountVaultItem.Resource), Mode=OneWay}" IsIndeterminate="False" VerticalAlignment="Center" HorizontalAlignment="Right" Minimum="0" Height="60" Width="60"/>
+            <Button x:Name="Generate" Grid.Column="2" Content="Generate" Click="Generate_Click" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Right" Height="60" Width="60"/>
         </Grid>
         <Grid Height="40" Padding="4" Background="{ThemeResource LayerFillColorDefaultBrush}">
             <StackPanel Orientation="Horizontal">

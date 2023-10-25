@@ -34,7 +34,7 @@ namespace Protecc.Services
         private static PasswordVault Vault = new PasswordVault();
         public static ObservableCollection<VaultItem> CredentialList = new ObservableCollection<VaultItem>();
 
-        protected internal static void StoreNewCredential(string Name, string Key, Color Color, int TimeIndex, int DigitsIndex, int Encryptionindex, int OTPTypeIndex)
+        protected internal static async void StoreNewCredential(string Name, string Key, Color Color, int TimeIndex, int DigitsIndex, int Encryptionindex, int OTPTypeIndex, StorageFile ImageFile)
         {
             string Resource = DataHelper.Encode(Color, TimeIndex, DigitsIndex, Encryptionindex, OTPTypeIndex);
             Vault.Add(new PasswordCredential(Resource, Name, Key));
@@ -54,6 +54,9 @@ namespace Protecc.Services
 
                 localSettings.Containers["OTPResourceContainer"].Values[Name] = composite;
             }
+
+            Windows.Storage.AccessCache.StorageApplicationPermissions.FutureAccessList.Add(ImageFile);
+            await ImageFile.CopyAsync(localFolder, Name + ".png", NameCollisionOption.ReplaceExisting);
         }
 
         /// <summary>
@@ -62,10 +65,11 @@ namespace Protecc.Services
         /// <param name="vaultItem"></param>
         /// <param name="newName"></param>
         /// <param name="newColor"></param>
-        protected internal static void EditCredential(VaultItem vaultItem, string newName, Color newColor)
+        protected internal static async void EditCredential(VaultItem vaultItem, string newName, Color newColor, StorageFile imageFile)
         {
             // Retrieve required data
             ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
+            StorageFolder localFolder = ApplicationData.Current.LocalFolder;
             var password = Vault.Retrieve(vaultItem.Resource, vaultItem.Name).Password;
             ApplicationDataCompositeValue resource = (ApplicationDataCompositeValue)localSettings.Containers["OTPResourceContainer"].Values[vaultItem.Name];
 
@@ -83,6 +87,9 @@ namespace Protecc.Services
                 DataHelper.OTPTypeId(vaultItem.Resource)
                 );
             resource["Name"] = newName;
+
+            Windows.Storage.AccessCache.StorageApplicationPermissions.FutureAccessList.Add(imageFile);
+            await imageFile.CopyAsync(localFolder, newName + ".png", NameCollisionOption.ReplaceExisting);
 
             //Save to credential vault and add to UI
             Vault.Add(new PasswordCredential(Resource, newName, password));

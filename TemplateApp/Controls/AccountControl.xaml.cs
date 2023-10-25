@@ -24,6 +24,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.Storage;
 using YamlDotNet.Core.Tokens;
 
 // The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
@@ -52,6 +53,8 @@ namespace Protecc.Controls
                     Progress.Visibility = Visibility.Collapsed;
                     Generate.Visibility = Visibility.Visible;
                 }
+
+                AccountIcon.ProfilePicture = DataHelper.AccountIcon(AccountVaultItem.Name);
             }
         }
         public static readonly DependencyProperty AccountVaultItemProperty =

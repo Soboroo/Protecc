@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
@@ -21,6 +22,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Xaml.Media.Imaging;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -32,6 +34,7 @@ namespace Protecc
     public sealed partial class EditAccountPage : Page
     {
         private VaultItem _editedVaultItem;
+        private StorageFile _imageFile;
 
         public EditAccountPage()
         {
@@ -52,7 +55,7 @@ namespace Protecc
             }
             else
             {
-                CredentialService.EditCredential(_editedVaultItem, NameBox.Text, ColorPicker.Color);
+                CredentialService.EditCredential(_editedVaultItem, NameBox.Text, ColorPicker.Color, _imageFile);
                 Frame rootFrame = Window.Current.Content as Frame;
                 rootFrame.Navigate(typeof(MainPage));
                 return;
@@ -70,6 +73,30 @@ namespace Protecc
             rootFrame.Navigate(typeof(MainPage));
         }
 
+        private async void PictureButton_Click(object sender, RoutedEventArgs e)
+        {
+            var picker = new Windows.Storage.Pickers.FileOpenPicker();
+            picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
+            picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
+            picker.FileTypeFilter.Add(".jpg");
+            picker.FileTypeFilter.Add(".jpeg");
+            picker.FileTypeFilter.Add(".png");
+
+            _imageFile = await picker.PickSingleFileAsync();
+            if (_imageFile != null)
+            {
+                Windows.Storage.AccessCache.StorageApplicationPermissions.FutureAccessList.Add(_imageFile);
+                var stream = await _imageFile.OpenAsync(FileAccessMode.Read);
+                var bitmapImage = new BitmapImage();
+                await bitmapImage.SetSourceAsync(stream);
+                Profile.ProfilePicture = bitmapImage;
+            }
+            else
+            {
+                // Operation cancelled
+            }
+        }
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             _editedVaultItem = e.Parameter as VaultItem;
@@ -77,6 +104,15 @@ namespace Protecc
 
             // Decode resource
             ColorPicker.Color = DataHelper.DecodeColor(_editedVaultItem.Resource).Color;
+
+            try
+            {
+                Profile.ProfilePicture = DataHelper.AccountIcon(_editedVaultItem.Name);
+            }
+            catch (Exception)
+            {
+                // No image
+            }
         }
     }
 }
