@@ -55,8 +55,23 @@ namespace Protecc.Services
                 localSettings.Containers["OTPResourceContainer"].Values[Name] = composite;
             }
 
-            Windows.Storage.AccessCache.StorageApplicationPermissions.FutureAccessList.Add(ImageFile);
-            await ImageFile.CopyAsync(localFolder, Name + ".png", NameCollisionOption.ReplaceExisting);
+            if (ImageFile != null)
+            {
+                Windows.Storage.AccessCache.StorageApplicationPermissions.FutureAccessList.Add(ImageFile);
+                await ImageFile.CopyAsync(localFolder, Name + ".png", NameCollisionOption.ReplaceExisting);
+            }
+            else
+            {
+                // No image selected
+                try
+                {
+                    await localFolder.GetFileAsync(Name + ".png").AsTask().Result.DeleteAsync();
+                }
+                catch (Exception)
+                {
+                    // No image
+                }
+            }
         }
 
         /// <summary>
@@ -88,8 +103,23 @@ namespace Protecc.Services
                 );
             resource["Name"] = newName;
 
-            Windows.Storage.AccessCache.StorageApplicationPermissions.FutureAccessList.Add(imageFile);
-            await imageFile.CopyAsync(localFolder, newName + ".png", NameCollisionOption.ReplaceExisting);
+            if (imageFile != null)
+            {
+                Windows.Storage.AccessCache.StorageApplicationPermissions.FutureAccessList.Add(imageFile);
+                await imageFile.CopyAsync(localFolder, newName + ".png", NameCollisionOption.ReplaceExisting);
+            } 
+            else
+            {
+                // No image selected
+                try
+                {
+                    await localFolder.GetFileAsync(newName + ".png").AsTask().Result.DeleteAsync();
+                }
+                catch (Exception)
+                {
+                    // No image
+                }
+            }
 
             //Save to credential vault and add to UI
             Vault.Add(new PasswordCredential(Resource, newName, password));

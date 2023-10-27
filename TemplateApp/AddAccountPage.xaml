@@ -606,6 +606,7 @@
                     <StackPanel>
                         <PersonPicture x:Name="Profile"/>
                         <Button x:Name="PictureButton" Content="Select Picture" Click="PictureButton_Click"/>
+                        <Button x:Name="RemovePictureButton" Content="Remove Picture" Click="RemovePictureButton_Click" Visibility="Collapsed"/>
                     </StackPanel>
                     <TextBlock x:Uid="AccountGeneralNameTitle" FontWeight="SemiBold">Name:</TextBlock>
                     <toolkit:DropShadowPanel ShadowOpacity="0.4" OffsetX="4" CornerRadius="8" Margin="0, 12, 0, 16" OffsetY="4">

@@ -90,6 +90,7 @@ namespace Protecc
                 var bitmapImage = new BitmapImage();
                 await bitmapImage.SetSourceAsync(stream);
                 Profile.ProfilePicture = bitmapImage;
+                RemovePictureButton.Visibility = Visibility.Visible;
             }
             else
             {
@@ -108,11 +109,28 @@ namespace Protecc
             try
             {
                 Profile.ProfilePicture = DataHelper.AccountIcon(_editedVaultItem.Name);
+                _imageFile = ApplicationData.Current.LocalFolder.GetFileAsync(_editedVaultItem.Name + ".png").AsTask().Result;
             }
             catch (Exception)
             {
                 // No image
             }
+
+            if (_imageFile != null)
+            {
+                RemovePictureButton.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                RemovePictureButton.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void RemovePictureButton_Click(object sender, RoutedEventArgs e)
+        {
+            _imageFile = null;
+            Profile.ProfilePicture = null;
+            RemovePictureButton.Visibility = Visibility.Collapsed;
         }
     }
 }

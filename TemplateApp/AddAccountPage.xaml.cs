@@ -32,7 +32,7 @@ namespace Protecc
     /// </summary>
     public sealed partial class AddAccountPage : Page
     {
-        StorageFile _imageFile;
+        private StorageFile _imageFile;
 
         public AddAccountPage()
         {
@@ -127,11 +127,19 @@ namespace Protecc
                 var bitmapImage = new Windows.UI.Xaml.Media.Imaging.BitmapImage();
                 await bitmapImage.SetSourceAsync(stream);
                 Profile.ProfilePicture = bitmapImage;
+                RemovePictureButton.Visibility = Visibility.Visible;
             }
             else
             {
                 // Operation cancelled
             }
+        }
+
+        private void RemovePictureButton_Click(object sender, RoutedEventArgs e)
+        {
+            _imageFile = null;
+            Profile.ProfilePicture = null;
+            RemovePictureButton.Visibility = Visibility.Collapsed;
         }
     }
 }

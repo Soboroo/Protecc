@@ -709,6 +709,7 @@
                     <StackPanel>
                         <PersonPicture x:Name="Profile"/>
                         <Button x:Name="PictureButton" Content="Select Picture" Click="PictureButton_Click"/>
+                        <Button x:Name="RemovePictureButton" Content="Remove Picture" Click="RemovePictureButton_Click" Visibility="Collapsed" />
                     </StackPanel>
                     <TextBlock x:Uid="AccountGeneralNameTitle" FontWeight="SemiBold">Name:</TextBlock>
                     <toolkit:DropShadowPanel
