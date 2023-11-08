@@ -11,12 +11,12 @@
 <a href="https://github.com/FireCubeStudios/Protecc/fork"><img src="https://img.shields.io/github/forks/FireCubeStudios/Protecc"></a>
 <a href="https://github.com/FireCubeStudios/Protecc/stargazers/"><img src="https://img.shields.io/github/stars/FireCubeStudios/Protecc"></a>
 
-https://img.shields.io/github/stars/FireCubeStudios/Protecc
+**English** | [Simplified Chinese(简体中文)](https://github.com/FireCubeStudios/Protecc/blob/master/Readme/README.zh-CN.md) | [Русский](https://github.com/FireCubeStudios/Protecc/blob/master/Readme/README.ru-RU.md) | [Deutsch](https://github.com/BootVirtual/Protecc/blob/master/Readme/Readme_German.md) | [Español](https://github.com/BootVirtual/Protecc/blob/master/Readme/README_Spanish.md) | [हिन्दी](https://github.com/BootVirtual/Protecc/blob/master/Readme/readme_hindi.md) | [ਪੰਜਾਬੀ](https://github.com/FireCubeStudios/Protecc/blob/master/Readme/readme_Punjabi.md) | More languages at *Readme* folder...
 
-<p style="font-size:15px;">Protecc는 다양한 커스터마이즈 옵션과 Windows Hello, 개인정보 필터 등 다양한 프라이버시 관련 기능을 제공하는 현대적인 윈도우용 오픈소스 2FA TOTP 인증기입니다.</p>
+<p style="font-size:15px;">Protecc is a modern open source 2FA TOTP code authenticator client for Windows with a wide range of customization and privacy features such as Windows Hello support, privacy filter and export.</p>
 </div>
 
-# 미리보기 ✨
+# Preview ✨
 
 <p align="center">
   <img align="center" src="https://store-images.s-microsoft.com/image/apps.36005.14273821654312693.614a2153-2264-4640-872a-02a2690944dd.0647a0bf-af72-4d44-b0c9-7e097abaa082">
@@ -25,18 +25,18 @@ https://img.shields.io/github/stars/FireCubeStudios/Protecc
 
 <a href="https://apps.microsoft.com/store/detail/protecc-2fa-client/9PJX91M06TZS"><img width="35%" src="Assets\Get_it_from_Microsoft_Badge.svg" alt="Get Protecc from Microsoft Store"></a>
 
-[Microsoft Store](https://apps.microsoft.com/store/detail/protecc-2fa-client/9PJX91M06TZS)나 [Releases](https://github.com/FireCubeStudios/Protecc/releases)에서 다운로드하세요.
+Get Protecc on [Microsoft Store](https://apps.microsoft.com/store/detail/protecc-2fa-client/9PJX91M06TZS) or [Releases](https://github.com/FireCubeStudios/Protecc/releases).
 
 
 https://github.com/kspearrin/Otp.NET
 
-  ### 빌드시 주의사항
-  - 인증서를 찾을 수 없다는 에러가 나타날 경우 Package Manifest > Certificates 에서 새로운 인증서를 생성하세요.
+  ### Building notes
+  - If you get an error of certificate not found go open Package Manifest > Certificates and generate your own new one
 
-## https://discord.gg/87qnqRB
+## Discord
 - Join our [Discord Channel](https://discord.gg/87qnqRB)
 
-# 우리의 기여자들
+# Meet our contributors
 
 <a href="https://github.com/FireCubeStudios/Protecc/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=FireCubeStudios/Protecc" />
@@ -46,7 +46,7 @@ https://github.com/kspearrin/Otp.NET
 
 <h6 align="center">© Fire Cube Studios. 2022 
 <br>
-전권 보유</h6>
+All Rights Reserved</h6>
 <p align="center">
     <a href="https://github.com/FireCubeStudios/Protecc/blob/master/LICENSE.txt"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/></a>
 </p>

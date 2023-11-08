@@ -118,249 +118,249 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AccountGeneralColorTitle.Text" xml:space="preserve">
-    <value>색상:</value>
+    <value>Color:</value>
   </data>
   <data name="AccountGeneralNamePlaceholder.PlaceholderText" xml:space="preserve">
-    <value>이름을 입력하세요...</value>
+    <value>Enter A name...</value>
   </data>
   <data name="AccountGeneralNameTitle.Text" xml:space="preserve">
-    <value>이름:</value>
+    <value>Name:</value>
   </data>
   <data name="AccountGeneralNext.Text" xml:space="preserve">
-    <value>다음</value>
+    <value>Next</value>
   </data>
   <data name="AddAccount30Seconds.Content" xml:space="preserve">
-    <value>30초</value>
+    <value>30 seconds</value>
   </data>
   <data name="AddAccount60Seconds.Content" xml:space="preserve">
-    <value>60초</value>
+    <value>60 seconds</value>
   </data>
   <data name="AddAccount6Digits.Content" xml:space="preserve">
-    <value>6자리</value>
+    <value>6 digits</value>
   </data>
   <data name="AddAccount8Digits.Content" xml:space="preserve">
-    <value>8자리</value>
+    <value>8 digits</value>
   </data>
   <data name="AddAccountAdvanced.Text" xml:space="preserve">
-    <value>고급설정</value>
+    <value>Advanced</value>
   </data>
   <data name="AddAccountDigitsTitle.Text" xml:space="preserve">
-    <value>자릿수:</value>
+    <value>Digits:</value>
   </data>
   <data name="AddAccountHashModeTitle.Text" xml:space="preserve">
-    <value>해싱 알고리즘:</value>
+    <value>Hash Mode:</value>
   </data>
   <data name="AddAccountKeyTitle.Text" xml:space="preserve">
-    <value>키:</value>
+    <value>Key:</value>
   </data>
   <data name="AddAccountPageTitle.Text" xml:space="preserve">
-    <value>새로운 계정 - Protecc</value>
+    <value>Add Account - Protecc</value>
   </data>
   <data name="AddAccountTimeTitle.Text" xml:space="preserve">
-    <value>시간:</value>
+    <value>Time:</value>
   </data>
   <data name="AddAccountTitle.Text" xml:space="preserve">
-    <value>새로운 계정</value>
+    <value>New Account</value>
   </data>
   <data name="AuthenticationAuthButton.Text" xml:space="preserve">
-    <value>인증</value>
+    <value>Authenticate</value>
   </data>
   <data name="AuthenticationPageTitle.Text" xml:space="preserve">
-    <value>인증 - Protecc</value>
+    <value>Authenticate - Protecc</value>
   </data>
   <data name="EditAccountPageTitle.Text" xml:space="preserve">
-    <value>계정 수정 - Protecc</value>
+    <value>Edit Account - Protecc</value>
   </data>
   <data name="EditAccountTitle.Text" xml:space="preserve">
-    <value>계정 편집</value>
+    <value>Edit Account</value>
   </data>
   <data name="ErrorHomeButton.Text" xml:space="preserve">
-    <value>메인화면으로</value>
+    <value>Home</value>
   </data>
   <data name="ErrorTitle.Text" xml:space="preserve">
-    <value>Protecc에 문제가 발생하였습니다.</value>
+    <value>Protecc ran into an error</value>
   </data>
   <data name="MainAddButton.Text" xml:space="preserve">
-    <value>추가</value>
+    <value>Add</value>
   </data>
   <data name="MainEnterKeyFlyout.Text" xml:space="preserve">
-    <value>키 입력하기</value>
+    <value>Enter Key</value>
   </data>
   <data name="MainFromCameraFlyout.Text" xml:space="preserve">
-    <value>카메라로 스캔</value>
+    <value>From Camera</value>
   </data>
   <data name="MainFromScreenFlyout.Text" xml:space="preserve">
-    <value>화면 스캔</value>
+    <value>From Screen</value>
   </data>
   <data name="MainHiddenButton.Text" xml:space="preserve">
-    <value>숨김</value>
+    <value>Hidden</value>
   </data>
   <data name="MainScanQRFlyout.Text" xml:space="preserve">
-    <value>QR코드 스캔</value>
+    <value>Scan QR</value>
   </data>
   <data name="MainVisibleButton.Text" xml:space="preserve">
-    <value>표시</value>
+    <value>Visible</value>
   </data>
   <data name="MainYourAccountsTitle.Text" xml:space="preserve">
-    <value>내 계정</value>
+    <value>Your Accounts</value>
   </data>
   <data name="NotificationCopyFailed.Text" xml:space="preserve">
-    <value>클립보드에 복사하는 동안 오류가 발생했습니다.</value>
+    <value>An error occurred while copying to clipboard.</value>
   </data>
   <data name="NotificationCopySucceed.Text" xml:space="preserve">
-    <value>코드를 클립보드에 복사했습니다!</value>
+    <value>Code copied to clipboard!</value>
   </data>
   <data name="OOBECard1Content.Text" xml:space="preserve">
-    <value>Protecc를 다운로드 해주셔셔 감사합니다. 빠른 설정을 완료하시고 Protecc를 사용해보세요!</value>
+    <value>Thank you for downloading Protecc. After following this quick setup, you can begin using the app!</value>
   </data>
   <data name="OOBECard1ReleaseNotesButton.Content" xml:space="preserve">
-    <value>릴리즈 노트</value>
+    <value>Release Notes</value>
   </data>
   <data name="OOBECard1Title.Text" xml:space="preserve">
-    <value>Protecc에 오신것을 환영합니다!</value>
+    <value>Welcome to Protecc!</value>
   </data>
   <data name="OOBECard2Title.Text" xml:space="preserve">
-    <value>맞춤 설정</value>
+    <value>Customize Settings</value>
   </data>
   <data name="OOBECard3Content.Text" xml:space="preserve">
-    <value>✓ 키 가림막
-✓ 코드 가리기
-✓ 앱 시작시, 비 포커스 시 자동 가림
-✓ 오픈소스</value>
+    <value>✓ Privacy Filter
+✓ Code Blurring
+✓ Auto blur on startup or unfocused
+✓ Open source</value>
   </data>
   <data name="OOBECard3GitHubButton.Content" xml:space="preserve">
     <value>GitHub</value>
   </data>
   <data name="OOBECard3Title.Text" xml:space="preserve">
-    <value>개인 정보 보호</value>
+    <value>Privacy</value>
   </data>
   <data name="OOBECard4StartButton.Text" xml:space="preserve">
-    <value>Protecc 시작하기</value>
+    <value>Start using Protecc</value>
   </data>
   <data name="OOBECard4Title.Text" xml:space="preserve">
-    <value>이제 설정이 끝났습니다!</value>
+    <value>You're all set!</value>
   </data>
   <data name="OOBELoading.Text" xml:space="preserve">
-    <value>로딩...</value>
+    <value>Loading...</value>
   </data>
   <data name="OOBEPageTitle.Text" xml:space="preserve">
-    <value>초기 설정 - Protecc</value>
+    <value>Setup - Protecc</value>
   </data>
   <data name="OOBESkipButton.Text" xml:space="preserve">
-    <value>건너뛰기</value>
+    <value>Skip</value>
   </data>
   <data name="OOBEStepperContent.Text" xml:space="preserve">
-    <value>{0}/4 단계</value>
+    <value>Step {0}/4</value>
   </data>
   <data name="OOBEStepperTitle.Text" xml:space="preserve">
-    <value>초기 설정</value>
+    <value>Setup</value>
   </data>
   <data name="RatingsDescription.Text" xml:space="preserve">
-    <value>앱을 즐기고 계시다면 잠시 시간을 내어 앱을 평가해주세요!</value>
+    <value>If you are enjoying the app please take a moment to rate it!</value>
   </data>
   <data name="RatingsPageTitle.Text" xml:space="preserve">
-    <value>앱을 평가해주세요! - Protecc</value>
+    <value>Rate our App! - Protecc</value>
   </data>
   <data name="RatingsRateItButton.Text" xml:space="preserve">
-    <value>평가하기!</value>
+    <value>Rate it!</value>
   </data>
   <data name="RatingsTitle.Text" xml:space="preserve">
-    <value>앱을 평가해세요!🌟</value>
+    <value>Rate our App!🌟</value>
   </data>
   <data name="SettingsAboutTitle.Text" xml:space="preserve">
-    <value>이 앱의 정보</value>
+    <value>About</value>
   </data>
   <data name="SettingsBlurDescription.Text" xml:space="preserve">
-    <value>앱을 포커스 하지 않을 때 코드를 가립니다</value>
+    <value>Blur codes when app is unfocused</value>
   </data>
   <data name="SettingsBlurTitle.Text" xml:space="preserve">
-    <value>코드 가리기</value>
+    <value>Blur codes</value>
   </data>
   <data name="SettingsCaptureDescription.Text" xml:space="preserve">
-    <value>이 앱을 캡쳐하는 것을 허용할지 결정합니다</value>
+    <value>Toggle screen capturing app</value>
   </data>
   <data name="SettingsCaptureTitle.Text" xml:space="preserve">
-    <value>화면 캡쳐</value>
+    <value>Screen capture</value>
   </data>
   <data name="SettingsCreditsTitle.Text" xml:space="preserve">
-    <value>제작진</value>
+    <value>Credits</value>
   </data>
   <data name="SettingsDeveloperTitle.Text" xml:space="preserve">
-    <value>개발자</value>
+    <value>Developer</value>
   </data>
   <data name="SettingsDiscordButton.Content" xml:space="preserve">
-    <value>가입하기</value>
+    <value>Join</value>
   </data>
   <data name="SettingsDiscordDescription.Text" xml:space="preserve">
-    <value>피드백을 주고받으며 최신 업데이트를 받아보세요</value>
+    <value>Give feedback and get latest updates</value>
   </data>
   <data name="SettingsDiscordTitle.Text" xml:space="preserve">
-    <value>Protecc 디스코드</value>
+    <value>Protecc Discord</value>
   </data>
   <data name="SettingsExportButton.Content" xml:space="preserve">
-    <value>내보내기</value>
+    <value>Export</value>
   </data>
   <data name="SettingsExportDescription.Text" xml:space="preserve">
-    <value>YAML로 키 내보내기</value>
+    <value>Export keys as YAML</value>
   </data>
   <data name="SettingsExportTitle.Text" xml:space="preserve">
-    <value>키 내보내기</value>
+    <value>Export keys</value>
   </data>
   <data name="SettingsFilterDescription.Text" xml:space="preserve">
-    <value>키 가림막을 기본으로 적용합니다</value>
+    <value>Shows the privacy filter by default</value>
   </data>
   <data name="SettingsFilterTitle.Text" xml:space="preserve">
-    <value>시작 시 가림막 적용</value>
+    <value>Show filter on launch</value>
   </data>
   <data name="SettingsGithubButton.Content" xml:space="preserve">
-    <value>GitHub 리포지토리</value>
+    <value>GitHub Repo</value>
   </data>
   <data name="SettingsIconDesignerTitle.Text" xml:space="preserve">
-    <value>아이콘 디자이너</value>
+    <value>Icon designer</value>
   </data>
   <data name="SettingsLanguageButton.Content" xml:space="preserve">
-    <value>앱 재시작</value>
+    <value>Reload App</value>
   </data>
   <data name="SettingsLanguageTitle.Text" xml:space="preserve">
-    <value>언어</value>
+    <value>Language</value>
   </data>
   <data name="SettingsSpecialThanksTitle.Text" xml:space="preserve">
-    <value>고마운 분들</value>
+    <value>Special Thanks</value>
   </data>
   <data name="SettingsTitle.Text" xml:space="preserve">
-    <value>설정</value>
+    <value>Settings</value>
   </data>
   <data name="SettingsTwitterButton.Content" xml:space="preserve">
-    <value>팔로우</value>
+    <value>Follow</value>
   </data>
   <data name="SettingsTwitterDescription.Text" xml:space="preserve">
-    <value>팔로우하고 최신 업데이트를 받아보세요</value>
+    <value>Follow for latest updates</value>
   </data>
   <data name="SettingsTwitterTitle.Text" xml:space="preserve">
-    <value>FireCube 트위터</value>
+    <value>FireCube Twitter</value>
   </data>
   <data name="SettingsViewOOBEButton.Content" xml:space="preserve">
-    <value>열기</value>
+    <value>Open</value>
   </data>
   <data name="SettingsViewOOBEDescription.Text" xml:space="preserve">
-    <value>처음 설치시의 화면을 엽니다</value>
+    <value>Open the setup page</value>
   </data>
   <data name="SettingsViewOOBETitle.Text" xml:space="preserve">
-    <value>처음 실행 화면 열기</value>
+    <value>View OOBE</value>
   </data>
   <data name="SettingsWindowsHelloDescription.Text" xml:space="preserve">
-    <value>앱 실행 시 Windows Hello를 사용합니다</value>
+    <value>Require Windows Hello on launch</value>
   </data>
   <data name="SettingsWindowsHelloNotAvailable.Text" xml:space="preserve">
-    <value>*Windows Hello가 활성화되지 않았습니다</value>
+    <value>*Windows Hello not setup</value>
   </data>
   <data name="SettingsWindowsHelloTitle.Text" xml:space="preserve">
-    <value>Windows Hello 인증</value>
+    <value>Windows Hello authentication</value>
   </data>
   <data name="WhatsNewPageTitle.Text" xml:space="preserve">
-    <value>새로운 업데이트 - Protecc</value>
+    <value>What's new - Protecc</value>
   </data>
   <data name="WhatsNewTitle.Text" xml:space="preserve">
-    <value>새로운 업데이트</value>
+    <value>What's new</value>
   </data>
 </root>
